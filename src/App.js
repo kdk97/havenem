@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { getAuth } from "firebase/auth";
 import { useState } from "react";
 import './App.css';
+import Nav from "./components/Nav";
 import FrontPage from './pages/FrontPage';
 import LoginPage from './pages/LoginPage';
 import CreateAccountPage from './pages/CreateAccountPage';
@@ -29,6 +30,7 @@ import CreatePostPage from './pages/CreatePostPage';
 
   const InRoutes = (
     <div >
+       <Nav />
        <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/udlej-vare" element={<CreatePostPage />} />
