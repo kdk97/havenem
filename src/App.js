@@ -1,25 +1,53 @@
-import logo from './logo.svg';
+import { Routes, Route, Navigate } from "react-router-dom";
+/*import { getAuth, onAuthStateChanged } from "firebase/auth";*/
+import { getAuth } from "firebase/auth";
+import { useState } from "react";
 import './App.css';
+import FrontPage from './pages/FrontPage';
+import LoginPage from './pages/LoginPage';
+import CreateAccountPage from './pages/CreateAccountPage';
+import HomePage from './pages/HomePage';
+import CreatePostPage from './pages/CreatePostPage';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+  function App() {
+   const isAuth = true;
+
+  /*const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
+   const auth = getAuth();
+   
+  
+   onAuthStateChanged(auth, (user) => {
+      if (user) {
+         setIsAuth(true);
+         localStorage.setItem("isAuth", true);
+      } else {
+         setIsAuth(false);
+         localStorage.removeItem("isAuth");
+      }
+   });*/
+
+  const InRoutes = (
+    <div >
+       <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/udlej-vare" element={<CreatePostPage />} />
+          <Route path="*" element={<Navigate to="/" />} />
+       </Routes>
     </div>
   );
+
+  const OutRoutes = (
+    <>
+      <Routes>
+          <Route path="/front" element={<FrontPage/>}/>
+          <Route path="/log-ind" element={<LoginPage/>}/>
+          <Route path="/opret-bruger" element={<CreateAccountPage />} />
+          <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </>
+  );
+  return <main>{isAuth ? InRoutes : OutRoutes}</main>;
 }
 
 export default App;
