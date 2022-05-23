@@ -3,6 +3,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useState } from "react";
 import Loader from './assets/components/Loader';
 import FrontPage from './pages/HomePage';
+import Nav from "./components/Nav";
 import LoginPage from './pages/LoginPage';
 import SignUpPage from './pages/SignUpPage';
 import HomePage from './pages/FrontPage';
@@ -40,6 +41,7 @@ function App() {
 
   const InRoutes = (
     <div >
+       <Nav />
        <Routes>
           <Route path="/" element={<HomePage showLoader={setShowLoader} />} />
           <Route path="/udlej-vare" element={<CreatePostPage showLoader={setShowLoader} />} />
