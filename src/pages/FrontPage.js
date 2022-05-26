@@ -2,7 +2,7 @@ import logo from "../assets/img/skovl-logo.png"
 import { Link } from "react-router-dom";
 import React from "react";
 
-export default function HomePage() {
+export default function FrontPage() {
 
 
     return(
