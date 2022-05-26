@@ -87,9 +87,16 @@ nav a {
   font-size: 0.5rem;
 }
 
-nav a.active {
-  background-color: #ebebeb;
-  color: black;
+
+.nav a:hover {
+  background-color: var(--light-grey);
+  color: var(--text-color-dark);
+}
+
+/* Add a color to the active/current link */
+.nav a.active {
+  background-color: var(--dark);
+  color: var(--light);
 }
 
 /* ---------- loader styling ---------- */
