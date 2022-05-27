@@ -12,7 +12,7 @@ export default function Nav() {
             <NavLink to="/udlej-vare"><img src= {navcached} alt="nav icon" ></img><p>Lån</p></NavLink>    
             <NavLink to="/tilføj"><img src= {navadd} alt="nav icon" ></img><p>Tilføj</p></NavLink>
             <NavLink to="/beskeder"><img src= {navchat} alt="nav icon" ></img><p>Beskeder</p></NavLink>
-            <NavLink to="/min-profil*"><img src= {navaccount} alt="nav icon" ></img><p>Profil</p></NavLink>
+            <NavLink to="/min-profil"><img src= {navaccount} alt="nav icon" ></img><p>Profil</p></NavLink>
         </nav>
     );
 }
