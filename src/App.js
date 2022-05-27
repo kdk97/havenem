@@ -12,7 +12,7 @@ import ProfilePage from "./pages/ProfilePage";
 
 
 function App() {
-   const [showLoader, setShowLoader] = useState(true); // default value of the loader is true (loader displayed)
+   const [showLoader, setShowLoader] = useState(false); // default value of the loader is true (loader displayed)
    const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth")); // default value comes from localStorage
  
    const auth = getAuth();
@@ -45,7 +45,7 @@ function App() {
        <Nav />
        <Routes>
           <Route path="/" element={<FrontPage />} />
-          <Route path="/tilføj" element={<CreatePostPage showLoader={setShowLoader} />} />
+          <Route path="/tilfoj" element={<CreatePostPage showLoader={setShowLoader} />} />
           <Route path="/beskeder" element={<HomePage showLoader={setShowLoader} />} />
           <Route path="/hjem" element={<HomePage showLoader={setShowLoader} />} />
           <Route path="/udlej-vare" element={<CreatePostPage showLoader={setShowLoader} />} />

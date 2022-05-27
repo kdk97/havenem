@@ -8,14 +8,14 @@ export default function ProfilePage({ showLoader }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [age, setAge] = useState("");
-  const [weight, setWeight] = useState("");
-  const [height, setHeight] = useState("");
+  const [city, setCity] = useState("");
+  const [adress, setAdress] = useState("");
   const [image, setImage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const auth = getAuth();
 
   useEffect(() => {
-    showLoader(false);
+    showLoader(true);
 
     async function getUser() {
       if (auth.currentUser) {
@@ -27,8 +27,8 @@ export default function ProfilePage({ showLoader }) {
           
           setName(userData.name);
           setAge(userData.age);
-          setWeight(userData.weight);
-          setHeight(userData.height);
+          setCity(userData.city);
+          setAdress(userData.adress);
           setImage(userData.image);
         }
       }
@@ -45,8 +45,8 @@ export default function ProfilePage({ showLoader }) {
     const userToUpdate = {
       name: name,
       age: age,
-      weight: weight,
-      height: height,
+      city: city,
+      adress: adress,
       image: image,
     }; 
     const docRef = doc(usersRef, auth.currentUser.uid); 
@@ -84,7 +84,7 @@ export default function ProfilePage({ showLoader }) {
             value={name}
             onChange={(e) => setName(e.target.value)}
             name="name"
-            placeholder="Skriv navn"
+            placeholder="Angiv navn"
           />
         </label>
         <label>
@@ -94,27 +94,27 @@ export default function ProfilePage({ showLoader }) {
             value={age}
             onChange={(e) => setAge(e.target.value)}
             name="age"
-            placeholder="Skriv alder"
+            placeholder="Angiv alder"
           />
         </label>
         <label>
-          Vægt i Kg
+          By
           <input
             type="text"
-            value={weight}
-            onChange={(e) => setWeight(e.target.value)}
-            name="weight"
-            placeholder="Skriv vægt"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+            name="city"
+            placeholder="Angiv by"
           />
         </label>
         <label>
-          Højde i cm
+          Adresse
           <input
             type="text"
-            value={height}
-            onChange={(e) => setHeight(e.target.value)}
-            name="Height"
-            placeholder="Skriv højde"
+            value={adress}
+            onChange={(e) => setAdress(e.target.value)}
+            name="adress"
+            placeholder="Angiv adresse"
           />
         </label>
         <label>
@@ -124,7 +124,7 @@ export default function ProfilePage({ showLoader }) {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             name="email"
-            placeholder="Skriv email"
+            placeholder="Angiv email"
             disabled
           />
         </label>
