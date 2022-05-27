@@ -8,11 +8,11 @@ import navhome from "../assets/img/home.svg";
 export default function Nav() {
     return (
         <nav>
-            <NavLink to="/*"><img src= {navhome} alt="nav icon" ></img><p>Hjem</p></NavLink>
-            <NavLink to="/*"><img src= {navcached} alt="nav icon" ></img><p>Lån</p></NavLink>    
-            <NavLink to="/*"><img src= {navadd} alt="nav icon" ></img><p>Tilføj</p></NavLink>
-            <NavLink to="/*"><img src= {navchat} alt="nav icon" ></img><p>Beskeder</p></NavLink>
-            <NavLink to="/*"><img src= {navaccount} alt="nav icon" ></img><p>Profil</p></NavLink>
+            <NavLink to="/hjem"><img src= {navhome} alt="nav icon" ></img><p>Hjem</p></NavLink>
+            <NavLink to="/udlej-vare"><img src= {navcached} alt="nav icon" ></img><p>Lån</p></NavLink>    
+            <NavLink to="/tilføj"><img src= {navadd} alt="nav icon" ></img><p>Tilføj</p></NavLink>
+            <NavLink to="/beskeder"><img src= {navchat} alt="nav icon" ></img><p>Beskeder</p></NavLink>
+            <NavLink to="/min-profil*"><img src= {navaccount} alt="nav icon" ></img><p>Profil</p></NavLink>
         </nav>
     );
 }
