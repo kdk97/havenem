@@ -15,7 +15,7 @@ export default function ProfilePage({ showLoader }) {
   const auth = getAuth();
 
   useEffect(() => {
-    showLoader(true);
+    showLoader(false);
 
     async function getUser() {
       if (auth.currentUser) {
@@ -62,19 +62,21 @@ export default function ProfilePage({ showLoader }) {
 
   return (
     <section className="page">
+      <div className="grid-container">
       <h1>Profil</h1>
       <form className="profilePage" onSubmit={handleSubmit}>
         <label>
-          <input
-            type="file"
-            className="file-input"
-            accept="image/*"
-          />
+
           <img
             className="image-preview"
             src={image}
             alt="Choose"
             onError={(event) => (event.target.src = imgPlaceholder)}
+          />
+            <input
+            type="file"
+            className="file-input"
+            accept="image/*"
           />
         </label>
         <label>
@@ -135,6 +137,7 @@ export default function ProfilePage({ showLoader }) {
       <button className="button-logud" onClick={handleSignOut}>
         Logud
       </button>
+      </div>
     </section>
   );
 }
