@@ -1,13 +1,16 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useState } from "react";
-import Loader from './assets/components/Loader';
-import FrontPage from './pages/HomePage';
+import Loader from './components/Loader';
+import HomePage from './pages/HomePage';
 import Nav from "./components/Nav";
 import LoginPage from './pages/LoginPage';
 import SignUpPage from './pages/SignUpPage';
-import HomePage from './pages/FrontPage';
+import FrontPage from './pages/FrontPage';
 import CreatePostPage from './pages/CreatePostPage';
+import ProfilePage from "./pages/ProfilePage";
+import SelectCategoryPage from "./pages/SelectCategoryPage";
+import PostCreatedPage from "./pages/PostCreatedPage";
 
 
 function App() {
@@ -43,8 +46,13 @@ function App() {
     <div >
        <Nav />
        <Routes>
-          <Route path="/" element={<HomePage showLoader={setShowLoader} />} />
+          <Route path="/" element={<FrontPage />} />
+          <Route path="/tilføj" element={<CreatePostPage showLoader={setShowLoader} />} />
+          <Route path="/beskeder" element={<HomePage showLoader={setShowLoader} />} />
+          <Route path="/hjem" element={<HomePage showLoader={setShowLoader} />} />
           <Route path="/udlej-vare" element={<CreatePostPage showLoader={setShowLoader} />} />
+          <Route path="/udlej-færdig" element={<PostCreatedPage showLoader={setShowLoader} />} />
+          <Route path="/min-profil" element={<ProfilePage showLoader={setShowLoader} />} />
           <Route path="*" element={<Navigate to="/" showLoader={setShowLoader} />} />
        </Routes>
     </div>
