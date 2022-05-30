@@ -12,6 +12,7 @@ export default function SignUpPage({ showLoader }) {
   const [age, setAge] = useState("");
   const [city, setCity] = useState("");
   const [adress, setAdress] = useState("");
+  const [telephone, setTelephone] = useState("");
   const auth = getAuth();
 
   useEffect(() => {
@@ -65,6 +66,15 @@ export default function SignUpPage({ showLoader }) {
             onChange={(e) => setName(e.target.value)}
             name="name"
             placeholder="Angiv dit navn"
+          />
+        </label>
+        <label>
+          <input
+            type="text"
+            value={telephone}
+            onChange={(e) => setTelephone(e.target.value)}
+            name="Telefon"
+            placeholder="Angiv dit Telefon nummer"
           />
         </label>
         <input type="email" name="mail" placeholder="Indtast din email" />

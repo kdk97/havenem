@@ -11,6 +11,7 @@ export default function ProfilePage({ showLoader }) {
   const [city, setCity] = useState("");
   const [adress, setAdress] = useState("");
   const [image, setImage] = useState("");
+  const [telephone, setTelephone] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const auth = getAuth();
 
@@ -117,6 +118,16 @@ export default function ProfilePage({ showLoader }) {
             onChange={(e) => setAdress(e.target.value)}
             name="adress"
             placeholder="Angiv adresse"
+          />
+        </label>
+        <label>
+          Telefon
+          <input
+            type="text"
+            value={telephone}
+            onChange={(e) => setTelephone(e.target.value)}
+            name="telefon"
+            placeholder="Angiv Telefon nummer"
           />
         </label>
         <label>
