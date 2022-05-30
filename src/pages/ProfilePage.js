@@ -16,7 +16,6 @@ export default function ProfilePage({ showLoader }) {
   const auth = getAuth();
 
   useEffect(() => {
-    showLoader(true);
 
     async function getUser() {
       if (auth.currentUser) {
@@ -33,7 +32,6 @@ export default function ProfilePage({ showLoader }) {
           setImage(userData.image);
         }
       }
-      showLoader(false);
     }
 
     getUser();
@@ -41,7 +39,6 @@ export default function ProfilePage({ showLoader }) {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    showLoader(true);
 
     const userToUpdate = {
       name: name,
@@ -52,7 +49,6 @@ export default function ProfilePage({ showLoader }) {
     }; 
     const docRef = doc(usersRef, auth.currentUser.uid); 
     await setDoc(docRef, userToUpdate); 
-    showLoader(false);
   }
 
   function handleSignOut() {

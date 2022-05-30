@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { Link } from "react-router-dom";
 import React from "react";
@@ -6,7 +6,7 @@ import logo from "../assets/img/skovl-logo.png";
 import { usersRef } from "../firebase-config";
 import { doc, setDoc } from "@firebase/firestore";
 
-export default function SignUpPage({ showLoader }) {
+export default function SignUpPage() {
   const [errorMessage, setErrorMessage] = useState("");
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
@@ -14,10 +14,6 @@ export default function SignUpPage({ showLoader }) {
   const [adress, setAdress] = useState("");
   const [telephone, setTelephone] = useState("");
   const auth = getAuth();
-
-  useEffect(() => {
-    showLoader(false);
-  }, [showLoader]);
 
   function handleSignUp(event) {
     event.preventDefault();
