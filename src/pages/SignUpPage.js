@@ -46,6 +46,7 @@ export default function SignUpPage({ showLoader }) {
       weight: weight, 
       height: height, 
     };
+    console.log(userToUpdate);
     const docRef = doc(usersRef, auth.currentUser.uid);
     await setDoc(docRef, userToUpdate);
   }

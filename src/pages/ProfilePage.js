@@ -15,7 +15,7 @@ export default function ProfilePage({ showLoader }) {
   const auth = getAuth();
 
   useEffect(() => {
-    showLoader(false);
+    showLoader(true);
 
     async function getUser() {
       if (auth.currentUser) {

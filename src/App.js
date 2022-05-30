@@ -12,7 +12,7 @@ import ProfilePage from "./pages/ProfilePage";
 
 
 function App() {
-   const [showLoader, setShowLoader] = useState(true); // default value of the loader is true (loader displayed)
+   const [showLoader, setShowLoader] = useState(false); // default value of the loader is true (loader displayed)
    const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth")); // default value comes from localStorage
  
    const auth = getAuth();
