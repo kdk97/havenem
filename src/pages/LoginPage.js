@@ -1,16 +1,12 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { Link } from "react-router-dom";
 import React from "react";
 import logo from "../assets/img/skovl-logo.png";
 
-export default function SignInPage({ showLoader }) {
+export default function SignInPage() {
   const [errorMessage, setErrorMessage] = useState("");
   const auth = getAuth();
-
-  useEffect(() => {
-    showLoader(false);
-  }, [showLoader]);
 
   function signIn(event) {
     event.preventDefault();

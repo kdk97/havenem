@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { Link } from "react-router-dom";
 import React from "react";
@@ -6,17 +6,14 @@ import logo from "../assets/img/skovl-logo.png";
 import { usersRef } from "../firebase-config";
 import { doc, setDoc } from "@firebase/firestore";
 
-export default function SignUpPage({ showLoader }) {
+export default function SignUpPage() {
   const [errorMessage, setErrorMessage] = useState("");
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [city, setCity] = useState("");
   const [adress, setAdress] = useState("");
+  const [telephone, setTelephone] = useState("");
   const auth = getAuth();
-
-  useEffect(() => {
-    showLoader(false);
-  }, [showLoader]);
 
   function handleSignUp(event) {
     event.preventDefault();
@@ -46,6 +43,7 @@ export default function SignUpPage({ showLoader }) {
       city: city, 
       adress: adress, 
     };
+    console.log(userToUpdate);
     const docRef = doc(usersRef, auth.currentUser.uid);
     await setDoc(docRef, userToUpdate);
   }
@@ -64,6 +62,15 @@ export default function SignUpPage({ showLoader }) {
             onChange={(e) => setName(e.target.value)}
             name="name"
             placeholder="Angiv dit navn"
+          />
+        </label>
+        <label>
+          <input
+            type="text"
+            value={telephone}
+            onChange={(e) => setTelephone(e.target.value)}
+            name="Telefon"
+            placeholder="Angiv dit Telefon nummer"
           />
         </label>
         <input type="email" name="mail" placeholder="Indtast din email" />

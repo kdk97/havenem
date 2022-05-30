@@ -11,11 +11,11 @@ export default function ProfilePage({ showLoader }) {
   const [city, setCity] = useState("");
   const [adress, setAdress] = useState("");
   const [image, setImage] = useState("");
+  const [telephone, setTelephone] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const auth = getAuth();
 
   useEffect(() => {
-    showLoader(false);
 
     async function getUser() {
       if (auth.currentUser) {
@@ -32,7 +32,6 @@ export default function ProfilePage({ showLoader }) {
           setImage(userData.image);
         }
       }
-      showLoader(false);
     }
 
     getUser();
@@ -40,7 +39,6 @@ export default function ProfilePage({ showLoader }) {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    showLoader(true);
 
     const userToUpdate = {
       name: name,
@@ -51,7 +49,6 @@ export default function ProfilePage({ showLoader }) {
     }; 
     const docRef = doc(usersRef, auth.currentUser.uid); 
     await setDoc(docRef, userToUpdate); 
-    showLoader(false);
   }
 
   function handleSignOut() {
@@ -117,6 +114,16 @@ export default function ProfilePage({ showLoader }) {
             onChange={(e) => setAdress(e.target.value)}
             name="adress"
             placeholder="Angiv adresse"
+          />
+        </label>
+        <label>
+          Telefon
+          <input
+            type="text"
+            value={telephone}
+            onChange={(e) => setTelephone(e.target.value)}
+            name="telefon"
+            placeholder="Angiv Telefon nummer"
           />
         </label>
         <label>
