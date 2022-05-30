@@ -5,6 +5,7 @@ import React from "react";
 import logo from "../assets/img/skovl-logo.png";
 import { usersRef } from "../firebase-config";
 import { doc, setDoc } from "@firebase/firestore";
+import imgPlaceholder from "../assets/img/user-placeholder.jpg"
 
 export default function SignUpPage() {
   const [errorMessage, setErrorMessage] = useState("");
@@ -13,6 +14,7 @@ export default function SignUpPage() {
   const [city, setCity] = useState("");
   const [adress, setAdress] = useState("");
   const [telephone, setTelephone] = useState("");
+  const [image, setImage] = useState("");
   const auth = getAuth();
 
   function handleSignUp(event) {
@@ -55,6 +57,19 @@ export default function SignUpPage() {
         Opret dig for at lave din egen træningsplan & dele den med andre
       </p>
       <form onSubmit={handleSignUp}>
+      <label>
+          <input
+            type="file"
+            className="file-input"
+            accept="image/*"
+          />
+          <img
+            className="image-preview"
+            src={image}
+            alt="Choose"
+            onError={(event) => (event.target.src = imgPlaceholder)}
+          />
+        </label>
         <label>
           <input
             type="text"
