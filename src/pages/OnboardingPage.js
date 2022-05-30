@@ -1,45 +1,42 @@
-import Swiper from 'swiper/bundle';
-import 'swiper/css/bundle';
+import { useNavigate } from "react-router-dom";
 import onboarding1 from "../assets/img/undraw1.svg";
+import onboarding2 from "../assets/img/undraw2.svg";
+import onboarding3 from "../assets/img/undraw3.svg";
+// import Swiper core and required modules
+import { Navigation, Pagination, A11y } from 'swiper';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Link, Navigate } from "react-router-dom";
 
-  export default function OnboardingPage() {
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
-    const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    direction: 'vertical',
-    loop: true,
-  
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-    },
-  
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  
-    // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
-  });
+export default () => {
 
+  const navigate = useNavigate();
 
-    return(
-        <div class="swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src= {onboarding1} alt="nav icon" ></img>Velkommen til Havenem, en app der gør det nemt for dig at låne eller udlåne ting</div>
-            <div class="swiper-slide"><img src= {navhome} alt="nav icon" ></img>Ved at låne ting hjælper du både miljøet og din pengepung</div>
-            <div class="swiper-slide"><img src= {navhome} alt="nav icon" ></img>Kom i gang med at poste dine ting til låns (tillad din gps lokation for at finde ting tæt på dig)</div>
-          </div>
-          <div class="swiper-pagination"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-scrollbar"></div>
-        </div>
-    )
-}
+  function handleClick (){
+    navigate(`/opret-bruger`)
+  }
+
+  return (
+    <Swiper
+      // install Swiper modules
+      modules={[Navigation, Pagination, A11y]}
+      spaceBetween={50}
+      slidesPerView={1}
+      navigation
+      pagination={{ clickable: true }}
+      onSwiper={(swiper) => console.log(swiper)}
+      onSlideChange={() => console.log('slide change')}
+    >
+      <SwiperSlide><img src= {onboarding2} alt="nav icon" ></img><p>Velkommen til Havenem, en app der gør det nemt for dig at låne eller udlåne ting</p></SwiperSlide>
+      <SwiperSlide><img src= {onboarding1} alt="nav icon" ></img><p>Ved at låne ting hjælper du både miljøet og din pengepung</p></SwiperSlide>
+      <SwiperSlide><img src= {onboarding3} alt="nav icon" ></img><p>Kom i gang med at poste dine ting til låns (husk at tillade gps lokation for at finde ting nær dig)</p><button onClick={handleClick}>Næste</button></SwiperSlide>
+    </Swiper>
+  );
+};
 

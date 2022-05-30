@@ -152,5 +152,38 @@ nav p{
   transition: visibility 0s 0.4s, opacity 0.4s linear;
 }
 
-/* ---------- Profile page ---------- */
+/* ---------- Swiper ---------- */
+.swiper {
+  max-width: 350px;
+  width: 90%;
+  display: block;
+  margin: auto;
+}
+
+.swiper img{
+  width: 100%;
+  object-fit: scale-down;
+  border-radius: 3%;
+  height: 400px;
+  padding-top: 30px;
+}
+
+
+.swiper p{
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: 0.1px;
+  text-align: center;
+  color: black;
+  padding: 8px 8px;
+}
+
+.swiper button{
+  font-weight: 300;
+  border-radius: 10px;
+  letter-spacing: 0.07em;
+  background-color: #F5791E; 
+  font-family: "Lato", sans-serif;
+  margin-right: 15%;
+}
 
