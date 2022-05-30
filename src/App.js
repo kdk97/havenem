@@ -8,6 +8,7 @@ import SignUpPage from './pages/SignUpPage';
 import FrontPage from './pages/FrontPage';
 import CreatePostPage from './pages/CreatePostPage';
 import ProfilePage from "./pages/ProfilePage";
+import OnboardingPage from "./pages/OnboardingPage";
 
 
 function App() {
