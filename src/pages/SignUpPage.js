@@ -10,8 +10,8 @@ export default function SignUpPage({ showLoader }) {
   const [errorMessage, setErrorMessage] = useState("");
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
-  const [weight, setWeight] = useState("");
-  const [height, setHeight] = useState("");
+  const [city, setCity] = useState("");
+  const [adress, setAdress] = useState("");
   const auth = getAuth();
 
   useEffect(() => {
@@ -43,8 +43,8 @@ export default function SignUpPage({ showLoader }) {
     const userToUpdate = {
       name: name, 
       age: age, 
-      weight: weight, 
-      height: height, 
+      city: city, 
+      adress: adress, 
     };
     console.log(userToUpdate);
     const docRef = doc(usersRef, auth.currentUser.uid);
@@ -80,19 +80,19 @@ export default function SignUpPage({ showLoader }) {
         <label>
           <input
             type="text"
-            value={weight}
-            onChange={(e) => setWeight(e.target.value)}
-            name="weight"
-            placeholder="Angiv vægt i Kg"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+            name="city"
+            placeholder="Angiv by"
           />
         </label>{" "}
         <label>
           <input
             type="text"
-            value={height}
-            onChange={(e) => setHeight(e.target.value)}
-            name="Height"
-            placeholder="Angiv højde"
+            value={adress}
+            onChange={(e) => setAdress(e.target.value)}
+            name="adress"
+            placeholder="Angiv adresse"
           />
         </label>
         <input

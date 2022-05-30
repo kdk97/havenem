@@ -45,7 +45,7 @@ function App() {
        <Nav />
        <Routes>
           <Route path="/" element={<FrontPage />} />
-          <Route path="/tilføj" element={<CreatePostPage showLoader={setShowLoader} />} />
+          <Route path="/tilfoj" element={<CreatePostPage showLoader={setShowLoader} />} />
           <Route path="/beskeder" element={<HomePage showLoader={setShowLoader} />} />
           <Route path="/hjem" element={<HomePage showLoader={setShowLoader} />} />
           <Route path="/udlej-vare" element={<CreatePostPage showLoader={setShowLoader} />} />
