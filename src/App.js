@@ -9,6 +9,7 @@ import SignUpPage from './pages/SignUpPage';
 import FrontPage from './pages/FrontPage';
 import CreatePostPage from './pages/CreatePostPage';
 import ProfilePage from "./pages/ProfilePage";
+import OnboardingPage from "./pages/OnboardingPage";
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
        <Nav />
        <Routes>
           <Route path="/" element={<FrontPage />} />
+          <Route path="/kom-igang" element={<OnboardingPage showLoader={setShowLoader} />} />
           <Route path="/tilfoj" element={<CreatePostPage showLoader={setShowLoader} />} />
           <Route path="/beskeder" element={<HomePage showLoader={setShowLoader} />} />
           <Route path="/hjem" element={<HomePage showLoader={setShowLoader} />} />
