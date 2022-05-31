@@ -45,9 +45,9 @@ function App() {
     <div >
        <Nav />
        <Routes>
-          <Route path="/" element={<FrontPage />} />
-          <Route path="/tilfoj" element={<HomePage />} />
-          <Route path="/beskeder" element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/tilfoj" element={<NyPlanPage />} />
+          <Route path="/beskeder" element={<Navigate to="/" />} />
           <Route path="/plan/:id" element={<PlanPage />} />
           <Route path="/hjem" element={<Navigate to="/" />} />
           <Route path="/udlej-vare" element={<Navigate to="/" />} />
