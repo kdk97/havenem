@@ -52,24 +52,26 @@ export default function SignUpPage() {
 
   return (
     <section className="page">
-      <img className="logo" src={logo} alt="Logo" />
-      <p className="lille-tekst">
-        Opret dig for at lave din egen træningsplan & dele den med andre
-      </p>
+      <div className="opret-bruger">
+      
       <form onSubmit={handleSignUp}>
       <label>
-          <input
-            type="file"
-            className="file-input"
-            accept="image/*"
-          />
+          
           <img
             className="image-preview"
             src={image}
             alt="Choose"
             onError={(event) => (event.target.src = imgPlaceholder)}
           />
+          <input
+            type="file"
+            className="file-input"
+            accept="image/*"
+          />
         </label>
+        <p >
+        Opret bruger
+      </p>
         <label>
           <input
             type="text"
@@ -122,11 +124,12 @@ export default function SignUpPage() {
           placeholder="Indtast dit kodeord"
         />
         <p className="text-error">{errorMessage}</p>
-        <button>Sign Up</button>
+        <button>Opret</button>
       </form>
       <p className="text-center">
         Har du allerede en bruger? <Link to="/sign-in">Log in</Link>
       </p>
+      </div>
     </section>
   );
 }

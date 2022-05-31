@@ -6,14 +6,17 @@ export default function FrontPage() {
 
 
     return(
-        <div className="page">
+        <section className="page">
+          <div className="front-page">
           <img className="logo" src={logo} alt="skovl-logo" />
-          <button>
+          <h1>
             <Link to="/kom-igang">Opret bruger</Link>
-          </button>
-          <button>
+          </h1>
+          <p>Eller</p>
+          <h1>
             <Link to="/log-ind">Log ind</Link>
-          </button>
+          </h1>
           </div>
+          </section>
     )
 }

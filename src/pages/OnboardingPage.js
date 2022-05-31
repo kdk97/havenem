@@ -9,7 +9,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-export default () => {
+export default function OnBoardingPage () {
 
   const navigate = useNavigate();
 
@@ -19,7 +19,6 @@ export default () => {
 
   return (
     <Swiper
-      // install Swiper modules
       modules={[Navigation, Pagination, A11y]}
       spaceBetween={50}
       slidesPerView={1}

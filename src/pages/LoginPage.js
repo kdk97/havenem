@@ -37,12 +37,13 @@ export default function SignInPage() {
           name="password"
           placeholder="Indtast dit kodeord"
         />
+              <p className="text-center1">
+        Har du ikke en bruger? <Link to="/sign-up">Opret</Link>
+      </p>
         <p className="text-error">{errorMessage}</p>
         <button>Log ind</button>
       </form>
-      <p className="text-center1">
-        Har du ikke en bruger? <Link to="/sign-up">Opret</Link>
-      </p>
+
     </section>
   );
 }

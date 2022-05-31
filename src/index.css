@@ -16,6 +16,12 @@ h1 {
     letter-spacing: 0.1px;
     text-align: center;
     color: white;
+    text-decoration: none;
+}
+
+h1 a{ 
+  text-decoration: none;
+  color: black;
 }
 
 .page {
@@ -28,10 +34,23 @@ h1 {
 
 form {
   padding-top: 20px;
+  text-align: center;
 }
 
 form input{
-  font-size: 1.5em;
+  font-size: 1.1em;
+  border-radius: 10px;
+  margin-top: 0.5em;
+  border: 1px solid;
+  padding: 0.2em;
+}
+
+.file-input{
+  font-size: 0.8em;
+  border-radius: 0;
+  margin-top: 0.5em;
+  border: 0px solid;
+  padding: 0;
 }
 
 /*--------grid-container--------*/
@@ -68,7 +87,7 @@ form input{
 
 /*---------image preview --------*/
 .image-preview {
-  width: 100%;
+  width: 80%;
   max-width: 350px;
   height: 200px;
   object-fit: cover;
@@ -87,9 +106,12 @@ button {
   letter-spacing: 0.07em;
   background-color: #F5791E; 
   display: block;
-  margin: 3em auto 0;
+  margin: 2em auto 0;
   font-family: "Lato", sans-serif;
-  font-size: 1em;
+  font-size: 1.2em;
+  border: 1px solid black;
+  color: white;
+  padding: 0.3em;
 }
 
 button a {
@@ -97,8 +119,6 @@ button a {
   color: white;
   font-size: 2em;
 }
-
-/* ---------- input---------- */
 
 
 
@@ -192,7 +212,7 @@ nav p{
   object-fit: scale-down;
   border-radius: 3%;
   height: 400px;
-  padding-top: 30px;
+  padding-top: 60px;
 }
 
 
@@ -206,13 +226,36 @@ nav p{
 }
 
 .swiper button{
-  font-weight: 300;
-  border-radius: 10px;
-  letter-spacing: 0.07em;
-  background-color: #F5791E; 
-  font-family: "Lato", sans-serif;
-  margin-right: 15%;
+  margin-right: 10%;
 }
+
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
+  z-index: 0;
+}
+
+/* ---------- Opret-bruger ---------- */
+
+.opret-bruger p{
+  font-size: 1em;
+  text-align: center;
+  color: black;
+  margin: auto;
+  margin-top: 2.5em;
+}
+
+/* ---------- front-page ---------- */
+
+.front-page p{
+  text-align: center;
+  font-size: 1.2em;
+}
+
+
+
+
+
+
+
 
 
 
