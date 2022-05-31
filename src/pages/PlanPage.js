@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { favsRef } from "../firebase-config";
 
-export default function UpdatePage({ showLoader }) {
+export default function UpdatePage() {
     const params = useParams(); 
     const postId = params.id; 
     const [post, setPost] = useState([]);
@@ -11,21 +11,17 @@ export default function UpdatePage({ showLoader }) {
 
     useEffect(() => {
         async function getPost() {
-            showLoader(true);
             const docRef = doc(favsRef, postId); 
             const docData = await getDoc(docRef); 
             setPost(docData.data()); 
-            showLoader(false);
         }
 
         getPost();
-    }, [showLoader, postId]); 
+    }, [postId]); 
 
     async function deletePost() {
         const confirmDelete = window.confirm(`Er du sikker på du vil slette denne plan?, ${post.name}?`); 
         if (confirmDelete) {
-            
-            showLoader(true);
             const docRef = doc(favsRef, postId); 
             await deleteDoc(docRef); 
             navigate("/");

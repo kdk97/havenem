@@ -5,7 +5,7 @@ import {favsRef} from "../firebase-config";
 import noimage from "../assets/img/no-image.png";
 
 
-export default function NewFavList({showLoader}) {
+export default function NewFavList() {
     const [image, setImage] = useState("");
     const [posts, setPosts] = useState([]);
     const [selectedPosts, setSelectedPosts] = useState([]);
@@ -25,10 +25,9 @@ export default function NewFavList({showLoader}) {
             const data = await response.json();
             setPosts(data);
             console.log(data);
-            showLoader(false);
         }
         getPosts();
-    }, [showLoader]);
+    },);
 
     async function handleSubmit(event) {
         event.preventDefault();
