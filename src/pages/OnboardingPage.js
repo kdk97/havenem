@@ -2,13 +2,8 @@ import { useNavigate } from "react-router-dom";
 import onboarding1 from "../assets/img/undraw1.svg";
 import onboarding2 from "../assets/img/undraw2.svg";
 import onboarding3 from "../assets/img/undraw3.svg";
-// import Swiper core and required modules
 import { Navigation, Pagination, A11y } from 'swiper';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Link, Navigate } from "react-router-dom";
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
