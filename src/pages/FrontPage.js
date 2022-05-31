@@ -10,7 +10,7 @@ export default function FrontPage() {
           <div className="front-page">
           <img className="logo" src={logo} alt="skovl-logo" />
           <h1>
-            <Link to="/kom-igang">Opret bruger</Link>
+            <Link to="/kom-igang">Kom i gang</Link>
           </h1>
           <p>Eller</p>
           <h1>
