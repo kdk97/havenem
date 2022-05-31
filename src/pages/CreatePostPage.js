@@ -22,9 +22,9 @@ export default function CreatePostPage() {
   };
 
     return (
-      <div>
+      <section className='page'>
       <h1>Opret annonce</h1>
       <CreatePost savePost={handleSubmitPost} />
-      </div>
+      </section>
     )
 }

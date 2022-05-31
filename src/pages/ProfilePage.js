@@ -76,7 +76,7 @@ export default function ProfilePage({ showLoader }) {
           />
         </label>
         <label>
-          Navn
+          
           <input
             type="text"
             value={name}
@@ -86,7 +86,7 @@ export default function ProfilePage({ showLoader }) {
           />
         </label>
         <label>
-          Alder
+          
           <input
             type="text"
             value={age}
@@ -96,7 +96,7 @@ export default function ProfilePage({ showLoader }) {
           />
         </label>
         <label>
-          By
+          
           <input
             type="text"
             value={city}
@@ -106,7 +106,7 @@ export default function ProfilePage({ showLoader }) {
           />
         </label>
         <label>
-          Adresse
+          
           <input
             type="text"
             value={adress}
@@ -116,7 +116,7 @@ export default function ProfilePage({ showLoader }) {
           />
         </label>
         <label>
-          Telefon
+          
           <input
             type="text"
             value={telephone}
@@ -126,7 +126,7 @@ export default function ProfilePage({ showLoader }) {
           />
         </label>
         <label>
-          Email
+          
           <input
             type="email"
             value={email}
