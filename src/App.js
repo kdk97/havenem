@@ -4,11 +4,13 @@ import { useState } from "react";
 import HomePage from './pages/HomePage';
 import Nav from "./components/Nav";
 import LoginPage from './pages/LoginPage';
+import PlanPage from "./pages/PlanPage";
 import SignUpPage from './pages/SignUpPage';
 import FrontPage from './pages/FrontPage';
-import CreatePostPage from './pages/CreatePostPage';
 import ProfilePage from "./pages/ProfilePage";
 import OnboardingPage from "./pages/OnboardingPage";
+import NyPlanPage from "./pages/NyPlanPage";
+
 
 
 function App() {
@@ -44,11 +46,13 @@ function App() {
        <Nav />
        <Routes>
           <Route path="/" element={<FrontPage />} />
-          <Route path="/tilfoj" element={<CreatePostPage />} />
+          <Route path="/tilfoj" element={<HomePage />} />
           <Route path="/beskeder" element={<HomePage />} />
-          <Route path="/hjem" element={<HomePage />} />
-          <Route path="/udlej-vare" element={<CreatePostPage />} />
+          <Route path="/plan/:id" element={<PlanPage />} />
+          <Route path="/hjem" element={<Navigate to="/" />} />
+          <Route path="/udlej-vare" element={<Navigate to="/" />} />
           <Route path="/min-profil" element={<ProfilePage />} />
+          <Route path="/ny-plan" element={<NyPlanPage />} />
           <Route path="*" element={<Navigate to="/" />} />
        </Routes>
     </div>
