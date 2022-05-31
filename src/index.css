@@ -60,6 +60,16 @@ form input{
   padding-left: 10px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
 }
+form h3{
+  color: white;
+  font-size: 1.3em;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+
 
 
 /*--------grid-container--------*/
@@ -73,6 +83,7 @@ form input{
     width: 90%;
     max-width: 350px;
     z-index: 10;
+    padding-bottom: 8em;
   }
 
   .grid-container img {
@@ -90,7 +101,7 @@ form input{
   align-items: center;
   max-width: 350px;
   width: 90%;
-  margin-top: 20%;
+  margin-top: 3em;
   border-radius: 100%;
 }
 
@@ -281,7 +292,7 @@ nav p{
   border-radius: 0;
   border: 0px solid;
   padding: 0;
-  color: white;
+  color: black;
 }
 
 /* ---------- front-page ---------- */
@@ -291,6 +302,7 @@ nav p{
   font-size: 1.2em;
 }
 
+/* ---------- post-page ---------- */
 
 
 
