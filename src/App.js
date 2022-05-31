@@ -58,6 +58,7 @@ function App() {
     <>
       <Routes>
           <Route path="/" element={<FrontPage />} />
+          <Route path="/kom-igang" element={<OnboardingPage />} />
           <Route path="/log-ind" element={<LoginPage />} />
           <Route path="/opret-bruger" element={<SignUpPage />} />
           <Route path="*" element={<Navigate to="/" />} />

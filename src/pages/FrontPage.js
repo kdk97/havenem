@@ -6,10 +6,10 @@ export default function FrontPage() {
 
 
     return(
-        <div className="grid-container">
+        <div className="page">
           <img className="logo" src={logo} alt="skovl-logo" />
           <button>
-            <Link to="/opret-bruger">Opret bruger</Link>
+            <Link to="/kom-igang">Opret bruger</Link>
           </button>
           <button>
             <Link to="/log-ind">Log ind</Link>

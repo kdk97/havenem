@@ -30,7 +30,6 @@ export default function SignInPage() {
   return (
     <section className="page">
       <img className="logo" src={logo} alt="Logo" />
-      <h1>Fitness Tracker</h1>
       <form onSubmit={signIn}>
         <input type="email" name="mail" placeholder="Indtast din email" />
         <input
