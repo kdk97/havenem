@@ -62,18 +62,17 @@ export default function ProfilePage({ showLoader }) {
       <div className="grid-container">
       <h1>Profil</h1>
       <form className="profilePage" onSubmit={handleSubmit}>
-        <label>
-
+      <label>
+          <input
+            type="file"
+            className="file-input"
+            accept="image/*"
+          />
           <img
             className="image-preview"
             src={image}
             alt="Choose"
             onError={(event) => (event.target.src = imgPlaceholder)}
-          />
-            <input
-            type="file"
-            className="file-input"
-            accept="image/*"
           />
         </label>
         <label>
