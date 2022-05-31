@@ -57,20 +57,23 @@ export default function CreatePost ({ savePost, post }) {
     }
 
     return (
+    <section className="page">
+    <div className="grid-container">
+    <h1>Opret annonce</h1>
     <form onSubmit={handleSubmit}>
             <div>
-            <h2>Upload billede</h2>
+            <h3>Upload billede</h3>
+                <img 
+                className="image-preview" 
+                src={image} 
+                alt="Vælg billede" 
+                onError={event => (event.target.src = noimage)} 
+                />
                 <input 
                 type="file" 
                 className="file-input" 
                 accept="image/*" 
                 onChange={handleImageChange} 
-                />
-                <img 
-                className="Forhåndsvisning" 
-                src={image} 
-                alt="Vælg billede" 
-                onError={event => (event.target.src = noimage)} 
                 />
         </div>
         <div className="select-category">
@@ -142,5 +145,7 @@ export default function CreatePost ({ savePost, post }) {
             >Opret</button>
         </div>
         </form>
+        </div>
+        </section> 
     )
 }
