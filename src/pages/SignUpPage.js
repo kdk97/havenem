@@ -78,7 +78,7 @@ export default function SignUpPage() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             name="name"
-            placeholder="Angiv dit navn"
+            placeholder="Navn"
           />
         </label>
         <label>
@@ -87,17 +87,17 @@ export default function SignUpPage() {
             value={telephone}
             onChange={(e) => setTelephone(e.target.value)}
             name="Telefon"
-            placeholder="Angiv dit Telefon nummer"
+            placeholder="Telefon nummer"
           />
         </label>
-        <input type="email" name="mail" placeholder="Indtast din email" />
+        <input type="email" name="mail" placeholder="Email" />
         <label>
           <input
             type="text"
             value={age}
             onChange={(e) => setAge(e.target.value)}
             name="age"
-            placeholder="Angiv din alder"
+            placeholder="Alder"
           />
         </label>{" "}
         <label>
@@ -106,7 +106,7 @@ export default function SignUpPage() {
             value={city}
             onChange={(e) => setCity(e.target.value)}
             name="city"
-            placeholder="Angiv by"
+            placeholder="By"
           />
         </label>{" "}
         <label>
@@ -115,13 +115,13 @@ export default function SignUpPage() {
             value={adress}
             onChange={(e) => setAdress(e.target.value)}
             name="adress"
-            placeholder="Angiv adresse"
+            placeholder="Adresse"
           />
         </label>
         <input
           type="password"
           name="password"
-          placeholder="Indtast dit kodeord"
+          placeholder="Kodeord"
         />
         <p className="text-error">{errorMessage}</p>
         <button>Opret</button>

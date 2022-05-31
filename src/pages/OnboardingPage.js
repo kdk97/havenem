@@ -18,6 +18,8 @@ export default function OnBoardingPage () {
   }
 
   return (
+    <section className="top-bar">
+      <h3>Kom i gang</h3>
     <Swiper
       modules={[Navigation, Pagination, A11y]}
       spaceBetween={50}
@@ -27,10 +29,12 @@ export default function OnBoardingPage () {
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
     >
+      
       <SwiperSlide><img src= {onboarding2} alt="nav icon" ></img><p>Velkommen til Havenem, en app der gør det nemt for dig at låne eller udlåne ting</p></SwiperSlide>
       <SwiperSlide><img src= {onboarding1} alt="nav icon" ></img><p>Ved at låne ting hjælper du både miljøet og din pengepung</p></SwiperSlide>
       <SwiperSlide><img src= {onboarding3} alt="nav icon" ></img><p>Kom i gang med at poste dine ting til låns (husk at tillade gps lokation for at finde ting nær dig)</p><button onClick={handleClick}>Næste</button></SwiperSlide>
     </Swiper>
+   </section> 
   );
 };
 
