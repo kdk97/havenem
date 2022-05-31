@@ -1,5 +1,7 @@
 import SelectPostImage from "../components/SelectPostImage"
 import React from 'react'
+import SearchBar from "../components/SearchBar";
+
 
 export default function CreatePostPage() {
 

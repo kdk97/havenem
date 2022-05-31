@@ -6,6 +6,8 @@ export default function FrontPage() {
 
 
     return(
+      <section className="page">
+
         <div className="grid-container">
           <img className="logo" src={logo} alt="skovl-logo" />
           <button>
@@ -15,5 +17,6 @@ export default function FrontPage() {
             <Link to="/log-ind">Log ind</Link>
           </button>
           </div>
+          </section>
     )
 }
