@@ -23,7 +23,7 @@ export default function CreatePost ({ savePost, post }) {
     function handleSubmit(event) {
     event.preventDefault();
     const formData = {
-        // create a new objebt to hold the value from states / input fields
+        // create a new object to hold the value from states / input fields
         image: image,
         category: category,
         title: title,
@@ -51,7 +51,7 @@ export default function CreatePost ({ savePost, post }) {
             reader.readAsDataURL(file);
             setErrorMessage(""); // reset errorMessage state
         } else {
-            // if not below 0.5MB display an error message using the errorMessage state
+            // if not below 1MB display an error message using the errorMessage state
             setErrorMessage("Filen er for stor");
         }
     }
