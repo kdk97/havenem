@@ -20,7 +20,7 @@ export default function NewFavList() {
 
     useEffect(() => {
         async function getPosts() {
-            const url = "https://api.jsonbin.io/b/623af66406182767437ddcdf/3";
+            const url = "https://api.jsonbin.io/b/62974317402a5b380218285b/1";
             const response = await fetch(url);
             const data = await response.json();
             setPosts(data);
@@ -83,7 +83,7 @@ export default function NewFavList() {
                 Navngiv plan type="file" className="file-input" accept="image/*" onChange={handleImageChange}
                 />
                 <img
-                    className="Forhåndsvisning"
+                    className="image-preview"
                     src={image}
                     alt="Vælg billede"
                     onError={event => (event.target.src = noimage)}/>
