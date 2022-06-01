@@ -6,7 +6,7 @@ export default function UserCard () {
         <div className="user-card">
         <img src={user.image} />
         <h3>{user.name}</h3>
-        <h4>{user.address}</h4>
+        <h3>{user.address}, {user.city}</h3>
         </div>
     )
 }
