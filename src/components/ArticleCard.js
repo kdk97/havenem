@@ -11,7 +11,7 @@ export default function ArticleCard () {
     const navigate = useNavigate();
 
     function handleClick() {
-        navigate(`/annonce/${post.slug}`);
+        navigate(`/annonce/${post.id}`);
     }
 
     useEffect(() => {
@@ -40,7 +40,7 @@ export default function ArticleCard () {
             <div className="article-image">
             <img src={post.image} alt={post.category} />
             </div>
-            <h2>{post.category}, {post.title}</h2>
+            <h2>{post.category}, {post.name}</h2>
             <h3>{user.city}</h3>
             <div className="buttons">
             {user.favorites?.includes(post.id) ? (

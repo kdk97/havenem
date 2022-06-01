@@ -5,8 +5,8 @@ export default function CreatePost ({ savePost, post }) {
 
     const [image, setImage] = useState("");
     const [category, setCategory] = useState("");
-    const [title, setTitle] = useState("");
-    const [info, setInfo] = useState("");
+    const [name, setName] = useState("");
+    const [about, setAbout] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
     
     useEffect(() => {
@@ -15,8 +15,8 @@ export default function CreatePost ({ savePost, post }) {
             // The post object is a prop, passed from UpdatePage
             setImage(post.image);
             setCategory(post.category);
-            setTitle(post.title);
-            setInfo(post.info);
+            setName(post.name);
+            setAbout(post.about);
         }
     }, [post]);
     
@@ -26,11 +26,11 @@ export default function CreatePost ({ savePost, post }) {
         // create a new object to hold the value from states / input fields
         image: image,
         category: category,
-        title: title,
-        info: info
+        name: name,
+        about: about
     };
 
-    const validForm = formData.image && formData.category && formData.title && formData.info; // will return false if one of the properties doesn't have a value
+    const validForm = formData.image && formData.category && formData.name && formData.about; // will return false if one of the properties doesn't have a value
         if (validForm) {
             // if all fields/ properties are filled, then call savePost
             savePost(formData);
@@ -118,23 +118,23 @@ export default function CreatePost ({ savePost, post }) {
           />
         </div>
         </div>
-        <div className="post-title">
+        <div className="post-name">
             <h2>Overskrift på annonce</h2>
             <input
-            className="post-title-text"
+            className="post-name-text"
             type="text"
-            value={title}
-            onChange={(event) => setTitle(event.target.value)}
+            value={name}
+            onChange={(event) => setName(event.target.value)}
             placeholder="Overskrift"
             />
         </div>
-        <div className="post-info">
+        <div className="post-about">
             <h2>Information omkring produktet</h2>
             <input
-            className="post-info-text"
+            className="post-about-text"
             type="text"
-            value={info}
-            onChange={(event) => setInfo(event.target.value)}
+            value={about}
+            onChange={(event) => setAbout(event.target.value)}
             placeholder="Produktinformation"
             />
             <button
