@@ -11,29 +11,86 @@ code {
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 700;
     letter-spacing: 0.1px;
     text-align: center;
+    color: white;
+    text-decoration: none;
+}
+
+h1 a{ 
+  text-decoration: none;
+  color: black;
 }
 
 .page {
     padding: 1em 1em 4em;
+    background-color: #0C3B29;
+    z-index: -1;
+    border-radius: 0 0 10% 10%;
+    height: 30vh;
 }
+
+form {
+  padding-top: 20px;
+  text-align: center;
+}
+
+form input{
+  font-size: 1.1em;
+  border-radius: 10px;
+  margin-top: 0.7em;
+  border: 1px solid;
+  padding: 0.2em;
+}
+
+.page {
+  padding: 1em;
+  padding-bottom: 4em;
+}
+
+.ovelser {
+  margin: 1em auto;
+  width: 350px;
+  box-sizing: border-box;
+  display: block;
+  border: solid 1px #c1c1c1;
+  border-radius: 15px;
+  padding-left: 10px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+}
+form h3{
+  color: white;
+  font-size: 1.3em;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+
+
 
 /*--------grid-container--------*/
 
-.grid-container::after {
-    content: '';
-    display: block;
-    position: absolute;
-    background-color: #0C3B29;
-    top: 0;
-    height: 50vh;
-    left: 0;
+
+
+.grid-container {
+    margin: auto;
+    display: grid;
+    background-color: none;
+    width: 90%;
+    max-width: 350px;
+    z-index: 10;
+    padding-bottom: 8em;
+  }
+
+  .grid-container img {
     width: 100%;
-    z-index: -1;
-    border-radius: 0 0 10% 10%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 3%;
   }
 
 /*-----------logo ------------*/
@@ -42,9 +99,23 @@ h1 {
   margin: auto;
   display: block;
   align-items: center;
-  width: 500px;
-  margin-top: 2%;
+  max-width: 350px;
+  width: 90%;
+  margin-top: 3em;
   border-radius: 100%;
+}
+
+/*---------image preview --------*/
+.image-preview {
+  width: 80%;
+  max-width: 350px;
+  height: 200px;
+  object-fit: cover;
+  margin: 1em auto;
+  display: block;
+  cursor: pointer;
+  border-radius: 20px;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
 }
 
 /*------button------*/
@@ -55,8 +126,12 @@ button {
   letter-spacing: 0.07em;
   background-color: #F5791E; 
   display: block;
-  margin: 3em auto 0;
+  margin: 2em auto 0;
   font-family: "Lato", sans-serif;
+  font-size: 1.2em;
+  border: 0px solid black;
+  color: white;
+  padding: 0.3em;
 }
 
 button a {
@@ -65,10 +140,16 @@ button a {
   font-size: 2em;
 }
 
+.button-logud{
+  margin: 1em auto 0;
+}
+
+
+
 /* ---------- nav  ---------- */
 nav {
   width: auto;
-  background-color: white;
+  background-color: #0C3B29;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -77,14 +158,19 @@ nav {
   z-index: 10;
 }
 
+
 nav a {
   display: inline-block;
-  color: black;
+  color: white;
   text-align: center;
-  padding: 20px 16px;
+  padding: 10px 7px 7px 16px;
   text-decoration: none;
   letter-spacing: 0.1em;
-  font-size: 0.5rem;
+  font-size: 0.7rem;
+}
+
+nav p{
+  margin: 0;
 }
 
 
@@ -136,3 +222,93 @@ nav a {
   opacity: 0;
   transition: visibility 0s 0.4s, opacity 0.4s linear;
 }
+
+/* ---------- Swiper ---------- */
+.swiper {
+  max-width: 350px;
+  width: 90%;
+  display: block;
+  margin: auto;
+}
+
+.swiper img{
+  width: 100%;
+  object-fit: scale-down;
+  border-radius: 3%;
+  height: 400px;
+  padding-top: 60px;
+}
+
+
+.swiper p{
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: 0.1px;
+  text-align: center;
+  color: black;
+  padding: 8px 8px;
+}
+
+.swiper button{
+  margin-right: 10%;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
+  z-index: 0;
+}
+
+.top-bar{
+  background-color: #0C3B29;
+  margin: 0;
+  padding: 1em 1em 1em;
+  z-index: -1;
+  border-radius: 0 0 50% 50%;
+  height: 1vh;
+  display: block;
+}
+
+.top-bar h3{
+  color: white;
+  text-align: center;
+  margin-top: -0.5em;
+  font-size: 0.8em;
+}
+
+
+
+/* ---------- Opret-bruger ---------- */
+
+.opret-bruger p{
+  font-size: 1em;
+  text-align: center;
+  color: black;
+  margin: auto;
+  margin-top: 3em;
+  font-weight: 600;
+}
+
+.file-input{
+  font-size: 1em;
+  border-radius: 0;
+  border: 0px solid;
+  padding: 0;
+  color: black;
+}
+
+/* ---------- front-page ---------- */
+
+.front-page p{
+  text-align: center;
+  font-size: 1.2em;
+}
+
+/* ---------- post-page ---------- */
+
+
+
+
+
+
+
+
+

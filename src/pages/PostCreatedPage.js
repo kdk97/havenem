@@ -4,8 +4,7 @@ export default function() {
 
     const navigate = useNavigate();
 
-    function handleMineAnnoncer(event) {
-        event.preventDefault();
+    function handleClick () {
         navigate("/mine-annoncer");
     }
 
@@ -13,9 +12,7 @@ export default function() {
         <div className="post-created">
             <h1>Din annonce er nu oprettet.</h1>
             <img src={succes} alt="Succes" />
-            <form>
-            <button onSubmit={handleMineAnnoncer}>Mine annoncer</button>
-            </form>
+            <button onClick={handleClick}>Mine annoncer</button>
         </div>
     )
 }

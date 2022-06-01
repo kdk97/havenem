@@ -2,18 +2,21 @@ import logo from "../assets/img/skovl-logo.png"
 import { Link } from "react-router-dom";
 import React from "react";
 
-export default function HomePage() {
+export default function FrontPage() {
 
 
     return(
-        <div className="grid-container">
+        <section className="page">
+          <div className="front-page">
           <img className="logo" src={logo} alt="skovl-logo" />
-          <button>
-            <Link to="/opret-bruger">Opret bruger</Link>
-          </button>
-          <button>
+          <h1>
+            <Link to="/kom-igang">Kom i gang</Link>
+          </h1>
+          <p>Eller</p>
+          <h1>
             <Link to="/log-ind">Log ind</Link>
-          </button>
+          </h1>
           </div>
+          </section>
     )
 }

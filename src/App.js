@@ -1,20 +1,19 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useState } from "react";
-import Loader from './components/Loader';
 import HomePage from './pages/HomePage';
 import Nav from "./components/Nav";
 import LoginPage from './pages/LoginPage';
+import PlanPage from "./pages/PlanPage";
 import SignUpPage from './pages/SignUpPage';
 import FrontPage from './pages/FrontPage';
-import CreatePostPage from './pages/CreatePostPage';
 import ProfilePage from "./pages/ProfilePage";
-import SelectCategoryPage from "./pages/SelectCategoryPage";
-import PostCreatedPage from "./pages/PostCreatedPage";
+import OnboardingPage from "./pages/OnboardingPage";
+import NyPlanPage from "./pages/NyPlanPage";
+
 
 
 function App() {
-   const [showLoader, setShowLoader] = useState(true); // default value of the loader is true (loader displayed)
    const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth")); // default value comes from localStorage
  
    const auth = getAuth();
@@ -46,14 +45,15 @@ function App() {
     <div >
        <Nav />
        <Routes>
-          <Route path="/" element={<FrontPage />} />
-          <Route path="/tilføj" element={<CreatePostPage showLoader={setShowLoader} />} />
-          <Route path="/beskeder" element={<HomePage showLoader={setShowLoader} />} />
-          <Route path="/hjem" element={<HomePage showLoader={setShowLoader} />} />
-          <Route path="/udlej-vare" element={<CreatePostPage showLoader={setShowLoader} />} />
-          <Route path="/udlej-færdig" element={<PostCreatedPage showLoader={setShowLoader} />} />
-          <Route path="/min-profil" element={<ProfilePage showLoader={setShowLoader} />} />
-          <Route path="*" element={<Navigate to="/" showLoader={setShowLoader} />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/tilfoj" element={<NyPlanPage />} />
+          <Route path="/beskeder" element={<Navigate to="/" />} />
+          <Route path="/plan/:id" element={<PlanPage />} />
+          <Route path="/hjem" element={<Navigate to="/" />} />
+          <Route path="/udlej-vare" element={<Navigate to="/" />} />
+          <Route path="/min-profil" element={<ProfilePage />} />
+          <Route path="/ny-plan" element={<NyPlanPage />} />
+          <Route path="*" element={<Navigate to="/" />} />
        </Routes>
     </div>
   );
@@ -61,17 +61,17 @@ function App() {
   const OutRoutes = (
     <>
       <Routes>
-          <Route path="/" element={<FrontPage showLoader={setShowLoader} />} />
-          <Route path="/log-ind" element={<LoginPage showLoader={setShowLoader} />} />
-          <Route path="/opret-bruger" element={<SignUpPage showLoader={setShowLoader} />} />
-          <Route path="*" element={<Navigate to="/" showLoader={setShowLoader} />} />
+          <Route path="/" element={<FrontPage />} />
+          <Route path="/kom-igang" element={<OnboardingPage />} />
+          <Route path="/log-ind" element={<LoginPage />} />
+          <Route path="/opret-bruger" element={<SignUpPage />} />
+          <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </>
   );
   return (
   <main>
      {isAuth ? InRoutes : OutRoutes}
-     {showLoader && <Loader />}
 
   </main>
   );
