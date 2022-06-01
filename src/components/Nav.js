@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 import navaccount from "../assets/img/account.svg";
 import navadd from "../assets/img/add.svg";
-import navcached from "../assets/img/cached.svg";
 import navchat from "../assets/img/chat.svg";
 import navhome from "../assets/img/home.svg";
 

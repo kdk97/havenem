@@ -315,7 +315,12 @@ nav p{
 /* ---------- post-page ---------- */
 
 
+/* ---------- Bekseder ---------- */
 
+.beskeder{
+  max-width: 100%;
+  margin-top: 0.1em;
+}
 
 
 
