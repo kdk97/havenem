@@ -10,6 +10,8 @@ import FrontPage from './pages/FrontPage';
 import ProfilePage from "./pages/ProfilePage";
 import OnboardingPage from "./pages/OnboardingPage";
 import NyPlanPage from "./pages/NyPlanPage";
+import MessagesPage from "./pages/MessagesPage";
+
 
 
 
@@ -47,7 +49,7 @@ function App() {
        <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/tilfoj" element={<NyPlanPage />} />
-          <Route path="/beskeder" element={<Navigate to="/" />} />
+          <Route path="/beskeder" element={<MessagesPage />} />
           <Route path="/plan/:id" element={<PlanPage />} />
           <Route path="/hjem" element={<Navigate to="/" />} />
           <Route path="/udlej-vare" element={<Navigate to="/" />} />
