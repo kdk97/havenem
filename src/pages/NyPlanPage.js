@@ -76,7 +76,7 @@ export default function NewFavList() {
     }
 
     return (<section className="page">
-        <h1>Ny træningsplan</h1>
+        <h1>Læg noget op</h1>
         <form onSubmit={handleSubmit}>
             <label>
                 <input
@@ -89,10 +89,9 @@ export default function NewFavList() {
                     onError={event => (event.target.src = noimage)}/>
             </label>
             <label>
-                Navngiv plan
                 <input
                     type="text"
-                    placeholder="Navngiv plan"
+                    placeholder="Hvad lejer du ud?"
                     onChange={e => setName(e.target.value)}/>
             </label>
             <label>

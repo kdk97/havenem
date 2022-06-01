@@ -29,10 +29,10 @@ export default function HomePage({ post, showLoader }) {
 
     return (
         <section className="page">
-            <button className="button-fixed" onClick={handleClick}>Opret træningsplan</button>
+            <button className="button-fixed" onClick={handleClick}>Læg noget op</button>
             
             <section className="grid-container">
-                <h1>Dine træningsplaner</h1>
+                <h1>Opslag</h1>
                 {posts.map(post => (
                     <PostCard post={post} key={post.id} />
                 ))}

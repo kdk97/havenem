@@ -20,7 +20,7 @@ export default function UpdatePage() {
     }, [postId]); 
 
     async function deletePost() {
-        const confirmDelete = window.confirm(`Er du sikker på du vil slette denne plan?, ${post.name}?`); 
+        const confirmDelete = window.confirm(`Er du sikker på du vil slette ${post.name}?`); 
         if (confirmDelete) {
             const docRef = doc(favsRef, postId); 
             await deleteDoc(docRef); 
@@ -31,6 +31,7 @@ export default function UpdatePage() {
     return (
         <section className="page">
             <h1>{post.name}</h1>
+            <img className="image-preview" alt="preview">{post.img}</img>
             {post.posts?.map(øvelse => (
                 <article className="ovelser">
                     <h2>{øvelse.name}</h2>
@@ -39,10 +40,6 @@ export default function UpdatePage() {
                     </p>
                 </article>
             ))}
-            
-            <button className="button-delete" onClick={deletePost}>
-                Slet træningsplan
-            </button>
         </section>
     );
 }
