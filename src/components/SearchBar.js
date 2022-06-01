@@ -1,3 +1,5 @@
+
+
 export default function SearchBar({ setValue }) {
 
     function handleSearch(event) {
@@ -5,9 +7,9 @@ export default function SearchBar({ setValue }) {
     }
   
     return (
-      <article>
-        <input type="search" placeholder="Search" onChange={handleSearch} />
-      </article>
+      <div className="searchbar-container">
+      <input type="search" placeholder="Søg" onChange={handleSearch} className="searchbar"/>
+      </div>
     );
   }
   
