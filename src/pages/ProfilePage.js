@@ -4,16 +4,29 @@ import { usersRef } from "../firebase-config";
 import { doc, getDoc, setDoc } from "@firebase/firestore";
 import imgPlaceholder from "../assets/img/user-placeholder.jpg";
 
-export default function ProfilePage({ showLoader }) {
+export default function ProfilePage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [age, setAge] = useState("");
   const [city, setCity] = useState("");
   const [adress, setAdress] = useState("");
   const [image, setImage] = useState("");
+  const [imagepreview, setImagePreview] = useState (null);
   const [telephone, setTelephone] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const auth = getAuth();
+
+  const onChangePicture = e => {
+    if (e.target.files[0]) {
+      console.log("picture: ", e.target.files);
+      setImage(e.target.files[0]);
+      const reader = new FileReader();
+      reader.addEventListener("load", () => {
+        setImagePreview(reader.result);
+      });
+      reader.readAsDataURL(e.target.files[0]);
+    }
+  };
 
   useEffect(() => {
 
@@ -29,13 +42,13 @@ export default function ProfilePage({ showLoader }) {
           setAge(userData.age);
           setCity(userData.city);
           setAdress(userData.adress);
-          setImage(userData.image);
+          setImagePreview(userData.image);
         }
       }
     }
 
     getUser();
-  }, [auth.currentUser, showLoader]); 
+  }, [auth.currentUser]); 
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -45,7 +58,7 @@ export default function ProfilePage({ showLoader }) {
       age: age,
       city: city,
       adress: adress,
-      image: image,
+      image: imagepreview,
     }; 
     const docRef = doc(usersRef, auth.currentUser.uid); 
     await setDoc(docRef, userToUpdate); 
@@ -66,11 +79,12 @@ export default function ProfilePage({ showLoader }) {
           <input
             type="file"
             className="file-input"
+            onChange={onChangePicture}
             accept="image/*"
           />
           <img
             className="image-preview"
-            src={image}
+            src={imagepreview}
             alt="Choose"
             onError={(event) => (event.target.src = imgPlaceholder)}
           />

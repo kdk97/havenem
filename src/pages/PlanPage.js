@@ -31,7 +31,7 @@ export default function UpdatePage() {
     return (
         <section className="page">
             <h1>{post.name}</h1>
-            <img className="image-preview" alt="preview">{post.img}</img>
+            <img className="image-preview" src={post.image} alt="preview"/>
             {post.posts?.map(øvelse => (
                 <article className="ovelser">
                     <h2>{øvelse.name}</h2>
