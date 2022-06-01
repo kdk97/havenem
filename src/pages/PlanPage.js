@@ -2,6 +2,7 @@ import { doc, getDoc, deleteDoc } from "@firebase/firestore";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { favsRef } from "../firebase-config";
+import UserCard from "../components/UserCard";
 
 export default function UpdatePage() {
     const params = useParams(); 
@@ -39,10 +40,7 @@ export default function UpdatePage() {
                     </p>
                 </article>
             ))}
-            
-            <button className="button-delete" onClick={deletePost}>
-                Slet træningsplan
-            </button>
+            <UserCard />
         </section>
     );
 }

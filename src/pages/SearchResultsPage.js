@@ -8,7 +8,7 @@ export default function SearchResultsPage () {
 
     const [searchValue, setSearchValue] = useState("");
     const [posts, setPosts] = useState([]);
-    const searchedPosts = posts.filter(post=> post.info.toLowerCase().includes(searchValue) || post.title.toLowerCase().includes(searchValue) || post.category.toLowerCase().includes(searchValue));
+    const searchedPosts = posts.filter(post=> post.about.toLowerCase().includes(searchValue) || post.name.toLowerCase().includes(searchValue) || post.category.toLowerCase().includes(searchValue));
 
     useEffect(()=>{
         const q = query(postsRef, orderBy("date")); // order by: date
