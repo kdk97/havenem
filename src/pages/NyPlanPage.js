@@ -92,7 +92,8 @@ export default function NewFavList() {
                         }
                     </select>
                 </label>
-                <input type="text" placeholder="Om" onChange={e => setAbout(e.target.value)}/>      
+                <input type="text" placeholder="Om" onChange={e => setAbout(e.target.value)}/> 
+                     
             </section>
 
             <button type="submit">Opret annonce</button>

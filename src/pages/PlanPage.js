@@ -30,16 +30,11 @@ export default function UpdatePage() {
 
     return (
         <section className="page">
-            <h1>{post.name}</h1>
+            <h1>Annoncer</h1>           
             <img className="image-preview" src={post.image} alt="preview"/>
-            {post.posts?.map(øvelse => (
-                <article className="ovelser">
-                    <h2>{øvelse.name}</h2>
-                    <p>
-                       Set: {øvelse.Set} Reps: {øvelse.Reps}
-                    </p>
-                </article>
-            ))}
+            <p>{post.selected}</p>
+            <h1>{post.name}</h1>
+            <p>{post.about}</p>
         </section>
     );
 }

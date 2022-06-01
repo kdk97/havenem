@@ -76,17 +76,17 @@ export default function ProfilePage() {
       <h1>Profil</h1>
       <form className="profilePage" onSubmit={handleSubmit}>
       <label>
-          <input
-            type="file"
-            className="file-input"
-            onChange={onChangePicture}
-            accept="image/*"
-          />
           <img
             className="image-preview"
             src={imagepreview}
             alt="Choose"
             onError={(event) => (event.target.src = imgPlaceholder)}
+          />
+          <input
+            type="file"
+            className="file-input"
+            onChange={onChangePicture}
+            accept="image/*"
           />
         </label>
         <label>
