@@ -1,4 +1,4 @@
-import usersRef from "../firebase-config";
+import { usersRef } from "../firebase-config";
 import { getDocs, query, where } from "@firebase/firestore";
 import { useEffect, useState } from "react";
 
