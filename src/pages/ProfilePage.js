@@ -112,7 +112,7 @@ export default function ProfilePage({ showLoader }) {
             value={address}
             onChange={(e) => setAddress(e.target.value)}
             name="address"
-            placeholder="Angiv adresse"
+            placeholder="Angiv addresse"
           />
         </label>
         <label>

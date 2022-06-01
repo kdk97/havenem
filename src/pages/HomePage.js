@@ -17,7 +17,7 @@ export default function HomePage({ showLoader }) {
             const postsData = data.docs.map(doc => {
                 return { ...doc.data(), id: doc.id };
             });
-            setRestaurants(postsData);
+            setPosts(postsData);
         });
         return () => unsubscribe();
     }, []);
