@@ -11,8 +11,7 @@ export default function NewFavList() {
     const [selectedPosts, setSelectedPosts] = useState([]);
     const [selectedPost, setSelectedPost] = useState({});
     const [name, setName] = useState("");
-    const [Set, setSet] = useState(0);
-    const [Reps, setReps] = useState(0);
+    const [about, setAbout] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
 
 
@@ -35,6 +34,7 @@ export default function NewFavList() {
         const newFavList = {
             name: name,
             image: image,
+            about: about,
             posts: selectedPosts
         };
 
@@ -42,22 +42,6 @@ export default function NewFavList() {
         navigate("/");
     }
 
-    function handleAddPost() {
-        const post = posts.find(post => post.id == selectedPost);
-        console.log(Set, Reps, post);
-        post.Set = Set;
-        post.Reps = Reps;
-        setSelectedPosts(prevSelectedPosts => [
-            ...prevSelectedPosts,
-            post
-        ]);
-    }
-
-    function handleRemove() {
-        console.log(selectedPost);
-        const filteredData = selectedPosts.filter(post => post.id != selectedPost);
-        setSelectedPosts(filteredData);
-    }
 
     function handleImageChange(event) {
         const file = event.target.files[0];
@@ -76,43 +60,29 @@ export default function NewFavList() {
     }
 
     return (<section className="page">
-        <h1>Læg noget op</h1>
+        <h1>Opret annonce</h1>
         <form onSubmit={handleSubmit}>
             <label>
-                <input
-                Navngiv plan type="file" className="file-input" accept="image/*" onChange={handleImageChange}
-                />
                 <img
                     className="image-preview"
                     src={image}
                     alt="Vælg billede"
                     onError={event => (event.target.src = noimage)}/>
             </label>
+                <input
+                    Navngiv plan type="file" className="file-input" accept="image/*" onChange={handleImageChange}
+                    />
             <label>
                 <input
                     type="text"
-                    placeholder="Hvad lejer du ud?"
+                    placeholder="Navngiv produkt"
                     onChange={e => setName(e.target.value)}/>
-            </label>
-            <label>
-                <section className="selected-posts">
-                    {selectedPosts.length === 0 && <p>Ingen øvelser er tilføjet endnu</p>}
-                    {
-                        selectedPosts.map(post => (
-                            <article class="ovelser2" key={post.id}>
-                                {post.name}
-                                Set: {post.Set}
-                                - Reps: {post.Reps}<a className="right" onClick={() => handleRemove(post.id)}>X</a>
-                            </article>
-                        ))
-                    }
-                </section>
             </label>
             <section className="add-posts">
                 <label>
-                    Vælg øvelser
+                    Vælg Kategori
                     <select value={selectedPost} onChange={e => setSelectedPost(e.target.value)}>
-                        <option>Øvelser</option>
+                        <option>Kategori</option>
                         {
                             posts.map(post => (
                                 <option value={post.id} key={post.id}>
@@ -122,19 +92,10 @@ export default function NewFavList() {
                         }
                     </select>
                 </label>
-                <input type="number" placeholder="Set" onChange={e => setSet(e.target.value)}/>
-
-                <input
-                    type="number"
-                    placeholder="Reps"
-                    onChange={e => setReps(e.target.value)}/>
-
-                <button type="button" onClick={handleAddPost}>
-                    Tilføj øvelse
-                </button>
+                <input type="text" placeholder="Om" onChange={e => setAbout(e.target.value)}/>      
             </section>
 
-            <button type="submit">Opret træningsplan</button>
+            <button type="submit">Opret annonce</button>
         </form>
     </section>
     );
