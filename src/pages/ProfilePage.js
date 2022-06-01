@@ -9,7 +9,7 @@ export default function ProfilePage({ showLoader }) {
   const [email, setEmail] = useState("");
   const [age, setAge] = useState("");
   const [city, setCity] = useState("");
-  const [adress, setAdress] = useState("");
+  const [address, setAddress] = useState("");
   const [image, setImage] = useState("");
   const [telephone, setTelephone] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -28,7 +28,7 @@ export default function ProfilePage({ showLoader }) {
           setName(userData.name);
           setAge(userData.age);
           setCity(userData.city);
-          setAdress(userData.adress);
+          setAddress(userData.address);
           setImage(userData.image);
         }
       }
@@ -44,7 +44,7 @@ export default function ProfilePage({ showLoader }) {
       name: name,
       age: age,
       city: city,
-      adress: adress,
+      address: address,
       image: image,
     }; 
     const docRef = doc(usersRef, auth.currentUser.uid); 
@@ -109,9 +109,9 @@ export default function ProfilePage({ showLoader }) {
           
           <input
             type="text"
-            value={adress}
-            onChange={(e) => setAdress(e.target.value)}
-            name="adress"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            name="address"
             placeholder="Angiv adresse"
           />
         </label>

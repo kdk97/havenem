@@ -1,12 +1,15 @@
 
 
 export default function UserCard () {
+
+    
     
     return (
         <div className="user-card">
-        <img src={user.image} />
-        <h3>{user.name}</h3>
-        <h3>{user.address}, {user.city}</h3>
+        <img src={post.user.image} />
+        <h3>{post.user.name}</h3>
+        <h3>{post.user.telephone}</h3>
+        <h3>{post.user.address}, {post.user.city}</h3>
         </div>
     )
 }

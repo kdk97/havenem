@@ -12,7 +12,7 @@ export default function SignUpPage() {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [city, setCity] = useState("");
-  const [adress, setAdress] = useState("");
+  const [address, setAddress] = useState("");
   const [telephone, setTelephone] = useState("");
   const [image, setImage] = useState("");
   const auth = getAuth();
@@ -43,7 +43,7 @@ export default function SignUpPage() {
       name: name, 
       age: age, 
       city: city, 
-      adress: adress, 
+      address: address, 
     };
     console.log(userToUpdate);
     const docRef = doc(usersRef, auth.currentUser.uid);
@@ -112,10 +112,10 @@ export default function SignUpPage() {
         <label>
           <input
             type="text"
-            value={adress}
-            onChange={(e) => setAdress(e.target.value)}
-            name="adress"
-            placeholder="Adresse"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            name="address"
+            placeholder="Addresse"
           />
         </label>
         <input

@@ -21,7 +21,7 @@ export default function UpdatePage() {
     }, [postId]); 
 
     async function deletePost() {
-        const confirmDelete = window.confirm(`Er du sikker på du vil slette denne plan?, ${post.name}?`); 
+        const confirmDelete = window.confirm(`Slet annonce?`); 
         if (confirmDelete) {
             const docRef = doc(favsRef, postId); 
             await deleteDoc(docRef); 
