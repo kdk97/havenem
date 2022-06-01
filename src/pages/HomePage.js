@@ -1,45 +1,36 @@
-import { useState, useEffect } from "react";
-import { onSnapshot } from "firebase/firestore";
-import { favsRef } from "../firebase-config";
-import PostCard from "../components/PostCard";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import logo from "../assets/img/skovl-logo.png"
+import { onSnapshot, orderBy, query } from "@firebase/firestore";
+import { postsRef } from "../firebase-config";
 
-export default function HomePage({ post, showLoader }) {
+
+
+export default function HomePage({ showLoader }) {
+
+    const [searchValue, setSearchValue] = useState("");
     const [posts, setPosts] = useState([]);
+    const shuffledPosts = posts.sort(()=> Math.random() - Math.random());
 
-    useEffect(() => {
-        const unsubscribe = onSnapshot(favsRef, data => {
-            const favData = data.docs.map(doc => {
-                
-                return { ...doc.data(), id: doc.id }; 
+    useEffect(()=>{
+        const q = query(postsRef, orderBy("name"));
+        const unsubscribe = onSnapshot(q, data => {
+            const postsData = data.docs.map(doc => {
+                return { ...doc.data(), id: doc.id };
             });
-            console.log(favData);
-            setPosts(favData);
-            showLoader(false);
+            setRestaurants(postsData);
         });
-        return () => unsubscribe(); 
-    }, [showLoader]);
+        return () => unsubscribe();
+    }, []);
 
-    const navigate = useNavigate();
+return(
+    <section className="page">
+    <div className="grid-container">
+    {shuffledPosts.map(restaurant=>(
+            <ResultCard restaurant={restaurant} key={restaurant.id}/>        
+            ))}
+    <img className="logo" src={logo} alt="skovl-logo" />
+    </div>
+    </section>
+)
 
-    
-    function handleClick() {
-        navigate(`/ny-plan`);
-    }
-
-    return (
-        <section className="page">
-            <button className="button-fixed" onClick={handleClick}>Opret træningsplan</button>
-            
-            <section className="grid-container">
-                <h1>Dine træningsplaner</h1>
-                {posts.map(post => (
-                    <PostCard post={post} key={post.id} />
-                ))}
-                
-            </section>
-
-        </section>
-    );
 }
-

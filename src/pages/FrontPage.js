@@ -4,7 +4,6 @@ import React from "react";
 
 export default function FrontPage() {
 
-
     return(
         <section className="page">
           <div className="front-page">
