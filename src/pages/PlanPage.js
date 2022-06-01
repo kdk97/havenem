@@ -7,7 +7,6 @@ export default function UpdatePage() {
     const params = useParams(); 
     const postId = params.id; 
     const [post, setPost] = useState([]);
-    const navigate = useNavigate();
 
     useEffect(() => {
         async function getPost() {
@@ -19,14 +18,6 @@ export default function UpdatePage() {
         getPost();
     }, [postId]); 
 
-    async function deletePost() {
-        const confirmDelete = window.confirm(`Er du sikker på du vil slette ${post.name}?`); 
-        if (confirmDelete) {
-            const docRef = doc(favsRef, postId); 
-            await deleteDoc(docRef); 
-            navigate("/");
-        }
-    }
 
     return (
         <section className="page">
