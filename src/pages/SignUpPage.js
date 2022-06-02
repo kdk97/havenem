@@ -60,7 +60,6 @@ export default function SignUpPage() {
       
       <form onSubmit={handleSignUp}>
       <label>
-          
           <img
             className="image-preview"
             src={image}
@@ -83,12 +82,14 @@ export default function SignUpPage() {
             onChange={(e) => setEmail(e.target.value)}
             name="email"
             placeholder="E-mail"
+            required
           />
         </label>
         <input
           type="password"
           name="password"
           placeholder="Kodeord"
+          required
         />
         <label>
           <input
@@ -97,6 +98,7 @@ export default function SignUpPage() {
             onChange={(e) => setName(e.target.value)}
             name="name"
             placeholder="Navn"
+            required
           />
         </label>
         <label>
@@ -107,6 +109,7 @@ export default function SignUpPage() {
             name="Telefon"
             placeholder="Telefonnummer"
             maxLength="8"
+            required
           />
         </label>
         <label>
@@ -116,6 +119,7 @@ export default function SignUpPage() {
             onChange={(e) => setAddress(e.target.value)}
             name="address"
             placeholder="Addresse"
+            required
           />
         </label>
         <label>
@@ -125,7 +129,8 @@ export default function SignUpPage() {
             onChange={(e) => setCity(e.target.value)}
             name="city"
             placeholder="By"
-          />
+            required
+          />  
         </label>
         <label>
           <input
@@ -135,6 +140,7 @@ export default function SignUpPage() {
             name="Postnummer"
             placeholder="Postnummer"
             maxLength="4"
+            required
           />
         </label>
         <p className="text-error">{errorMessage}</p>
