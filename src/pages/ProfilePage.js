@@ -42,6 +42,8 @@ export default function ProfilePage() {
           setAge(userData.age);
           setCity(userData.city);
           setAddress(userData.address);
+          setEmail(userData.email);
+          setTelephone(userData.telephone);
           setImagePreview(userData.image);
         }
       }
@@ -58,6 +60,8 @@ export default function ProfilePage() {
       age: age,
       city: city,
       address: address,
+      email: email,
+      telephone: telephone,
       image: imagepreview,
     }; 
     const docRef = doc(usersRef, auth.currentUser.uid); 
@@ -97,16 +101,6 @@ export default function ProfilePage() {
             onChange={(e) => setName(e.target.value)}
             name="name"
             placeholder="Angiv navn"
-          />
-        </label>
-        <label>
-          
-          <input
-            type="text"
-            value={age}
-            onChange={(e) => setAge(e.target.value)}
-            name="age"
-            placeholder="Angiv alder"
           />
         </label>
         <label>
