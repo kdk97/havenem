@@ -1,15 +1,14 @@
 import {addDoc} from "@firebase/firestore";
 import {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
-import {favsRef} from "../firebase-config";
+import {usersRef} from "../firebase-config";
 import noimage from "../assets/img/no-image.png";
 
 
-export default function NewFavList() {
+export default function newUserPost() {
     const [image, setImage] = useState("");
     const [posts, setPosts] = useState([]);
-    const [selectedPosts, setSelectedPosts] = useState([]);
-    const [selectedPost, setSelectedPost] = useState({});
+    const [category, setCategory] = useState([]);
     const [name, setName] = useState("");
     const [about, setAbout] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
@@ -31,14 +30,15 @@ export default function NewFavList() {
     async function handleSubmit(event) {
         event.preventDefault();
 
-        const newFavList = {
-            name: name,
+        const newUserPost = {
             image: image,
-            about: about,
-            posts: selectedPosts
-        };
+            name: name,
+            category: category,
+            about: about
+            }
 
-        await addDoc(favsRef, newFavList);
+
+        await addDoc(usersRef, newUserPost);
         navigate("/");
     }
 
@@ -54,7 +54,7 @@ export default function NewFavList() {
             reader.readAsDataURL(file);
             setErrorMessage(""); // reset errorMessage state
         } else {
-            // if not below 0.5MB display an error message using the errorMessage state
+            // if not below 1MB display an error message using the errorMessage state
             setErrorMessage("Filen er for stor");
         }
     }
@@ -75,13 +75,13 @@ export default function NewFavList() {
             <label>
                 <input
                     type="text"
-                    placeholder="Navngiv produkt"
+                    placeholder="Angiv produkt"
                     onChange={e => setName(e.target.value)}/>
             </label>
             <section className="add-posts">
                 <label>
                     Vælg Kategori
-                    <select value={selectedPost} onChange={e => setSelectedPost(e.target.value)}>
+                    <select value={category} onChange={e => setCategory(e.target.value)}>
                         <option>Kategori</option>
                         {
                             posts.map(post => (

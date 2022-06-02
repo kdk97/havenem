@@ -43,7 +43,7 @@ export default function SignUpPage() {
       name: name, 
       age: age, 
       city: city, 
-      address: address, 
+      address: address,
     };
     console.log(userToUpdate);
     const docRef = doc(usersRef, auth.currentUser.uid);
