@@ -13,7 +13,6 @@ export default function NewFavList() {
     const [name, setName] = useState("");
     const [about, setAbout] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
-    const [userImage, setUserImage] = useState("");
     const [userName , setUserName] = useState("");
     const [telephone , setTelephone] = useState("");
     const [address , setAddress] = useState("");
@@ -35,7 +34,6 @@ export default function NewFavList() {
             const docRef = doc(usersRef, authUser.uid);
             const docSnap = await getDoc(docRef);
             const userData = docSnap.data();
-            setUserImage(userData.userImage);
             setUserName(userData.name);
             setTelephone(userData.telephone);
             setAddress(userData.address);
@@ -61,7 +59,6 @@ export default function NewFavList() {
             address: address,
             zipcode: zipcode,
             city: city,
-            userimage: userImage
         };
 
         await addDoc(favsRef, newFavList);
@@ -88,16 +85,19 @@ export default function NewFavList() {
     return (<section className="page">
         <h1>Opret annonce</h1>
         <form onSubmit={handleSubmit}>
-            <label>
+        <label>
                 <img
                     className="image-preview"
                     src={image}
                     alt="Vælg billede"
                     onError={event => (event.target.src = noimage)}/>
-            </label>
-                <input
-                    Navngiv plan type="file" className="file-input" accept="image/*" onChange={handleImageChange}
+                <input 
+                    type="file" 
+                    className="file-input" 
+                    accept="image/*" 
+                    onChange={handleImageChange}
                     />
+            </label>
             <label>
                 <input
                     type="text"
