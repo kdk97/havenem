@@ -13,6 +13,7 @@ export default function SignUpPage() {
   const [city, setCity] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
+  const [zipcode, setZipcode] = useState("");
   const [telephone, setTelephone] = useState("");
   const [image, setImage] = useState("");
   const auth = getAuth();
@@ -40,11 +41,12 @@ export default function SignUpPage() {
 
   async function saveUserInfo() {
     const userToUpdate = {
-      name: name, 
-      city: city, 
-      address: address, 
-      email: email,
+      name: name,
       telephone: telephone,
+      address: address,
+      zipcode: zipcode,
+      city: city,
+      email: email,
 
     };
     console.log(userToUpdate);
@@ -74,6 +76,20 @@ export default function SignUpPage() {
         <p >
         Opret bruger
       </p>
+      <label>
+          <input
+            type="text"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            name="email"
+            placeholder="E-mail"
+          />
+        </label>
+        <input
+          type="password"
+          name="password"
+          placeholder="Kodeord"
+        />
         <label>
           <input
             type="text"
@@ -85,20 +101,21 @@ export default function SignUpPage() {
         </label>
         <label>
           <input
-            type="text"
+            type="tel"
             value={telephone}
             onChange={(e) => setTelephone(e.target.value)}
             name="Telefon"
-            placeholder="Telefon nummer"
+            placeholder="Telefonnummer"
+            maxLength="8"
           />
         </label>
         <label>
           <input
             type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            name="email"
-            placeholder="E-mail"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            name="address"
+            placeholder="Addresse"
           />
         </label>
         <label>
@@ -112,18 +129,14 @@ export default function SignUpPage() {
         </label>
         <label>
           <input
-            type="text"
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-            name="address"
-            placeholder="Addresse"
+            type="tel"
+            value={zipcode}
+            onChange={(e) => setZipcode(e.target.value)}
+            name="Postnummer"
+            placeholder="Postnummer"
+            maxLength="4"
           />
         </label>
-        <input
-          type="password"
-          name="password"
-          placeholder="Kodeord"
-        />
         <p className="text-error">{errorMessage}</p>
         <button>Opret</button>
       </form>

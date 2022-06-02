@@ -9,6 +9,7 @@ export default function ProfilePage() {
   const [email, setEmail] = useState("");
   const [age, setAge] = useState("");
   const [city, setCity] = useState("");
+  const [zipcode, setZipcode] = useState("");
   const [address, setAddress] = useState("");
   const [image, setImage] = useState("");
   const [imagepreview, setImagePreview] = useState (null);
@@ -41,6 +42,7 @@ export default function ProfilePage() {
           setName(userData.name);
           setAge(userData.age);
           setCity(userData.city);
+          setZipcode(userData.zipcode);
           setAddress(userData.address);
           setEmail(userData.email);
           setTelephone(userData.telephone);
@@ -58,6 +60,7 @@ export default function ProfilePage() {
     const userToUpdate = {
       name: name,
       age: age,
+      zipcode: zipcode,
       city: city,
       address: address,
       email: email,
@@ -94,7 +97,16 @@ export default function ProfilePage() {
           />
         </label>
         <label>
-          
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            name="email"
+            placeholder="Angiv e-mail"
+            disabled
+          />
+        </label>
+        <label>
           <input
             type="text"
             value={name}
@@ -104,17 +116,16 @@ export default function ProfilePage() {
           />
         </label>
         <label>
-          
           <input
-            type="text"
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-            name="city"
-            placeholder="Angiv by"
+            type="tel"
+            value={telephone}
+            onChange={(e) => setTelephone(e.target.value)}
+            name="telefon"
+            placeholder="Angiv Telefon nummer"
+            maxLength="8"
           />
         </label>
         <label>
-          
           <input
             type="text"
             value={address}
@@ -124,27 +135,24 @@ export default function ProfilePage() {
           />
         </label>
         <label>
-          
           <input
             type="text"
-            value={telephone}
-            onChange={(e) => setTelephone(e.target.value)}
-            name="telefon"
-            placeholder="Angiv Telefon nummer"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+            name="city"
+            placeholder="Angiv by"
           />
         </label>
         <label>
-          
           <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            name="email"
-            placeholder="Angiv email"
-            disabled
+            type="tel"
+            value={zipcode}
+            onChange={(e) => setZipcode(e.target.value)}
+            name="postnummer"
+            placeholder="Postnummer"
+            maxLength="4"
           />
         </label>
-
         <p className="text-error">{errorMessage}</p>
         <button>Gem</button>
       </form>

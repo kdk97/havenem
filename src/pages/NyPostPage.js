@@ -18,6 +18,7 @@ export default function NewFavList() {
     const [address , setAddress] = useState("");
     const [email , setEmail] = useState("");
     const [city , setCity] = useState("");
+    const [zipcode , setZipcode] = useState("");
 
 
     const navigate = useNavigate();
@@ -38,6 +39,7 @@ export default function NewFavList() {
             setAddress(userData.address);
             setEmail(userData.email);
             setCity(userData.city);
+            setZipcode(userData.zipcode);
             console.log(userData);
             
         }
@@ -55,7 +57,7 @@ export default function NewFavList() {
             user: userName,
             telephone: telephone,
             address: address,
-            email: email,
+            zipcode: zipcode,
             city: city
         };
 
