@@ -15,7 +15,7 @@ export default function SignUpPage() {
   const [address, setAddress] = useState("");
   const [zipcode, setZipcode] = useState("");
   const [telephone, setTelephone] = useState("");
-  const [image, setImage] = useState("");
+  const [userImage, setUserImage] = useState("");
   const auth = getAuth();
 
   function handleSignUp(event) {
@@ -47,12 +47,28 @@ export default function SignUpPage() {
       zipcode: zipcode,
       city: city,
       email: email,
-
+      userimage: userImage
     };
     console.log(userToUpdate);
     const docRef = doc(usersRef, auth.currentUser.uid);
     await setDoc(docRef, userToUpdate);
   }
+
+  function handleImageChange(event) {
+    const file = event.target.files[0];
+    if (file.size < 1000000) {
+        // image file size must be below 1MB
+        const reader = new FileReader();
+        reader.onload = event => {
+            setUserImage(event.target.result);
+        };
+        reader.readAsDataURL(file);
+        setErrorMessage(""); // reset errorMessage state
+    } else {
+        // if not below 1MB display an error message using the errorMessage state
+        setErrorMessage("Filen er for stor");
+    }
+}
 
   return (
     <section className="page">
@@ -61,8 +77,8 @@ export default function SignUpPage() {
       <form onSubmit={handleSignUp}>
       <label>
           <img
-            className="image-preview"
-            src={image}
+            className="user-image"
+            src={userImage}
             alt="Choose"
             onError={(event) => (event.target.src = imgPlaceholder)}
           />
@@ -70,6 +86,7 @@ export default function SignUpPage() {
             type="file"
             className="file-input"
             accept="image/*"
+            onChange={handleImageChange}
           />
         </label>
         <p >

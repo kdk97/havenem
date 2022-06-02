@@ -13,6 +13,7 @@ export default function NewFavList() {
     const [name, setName] = useState("");
     const [about, setAbout] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
+    const [userImage, setUserImage] = useState("");
     const [userName , setUserName] = useState("");
     const [telephone , setTelephone] = useState("");
     const [address , setAddress] = useState("");
@@ -34,6 +35,7 @@ export default function NewFavList() {
             const docRef = doc(usersRef, authUser.uid);
             const docSnap = await getDoc(docRef);
             const userData = docSnap.data();
+            setUserImage(userData.userImage);
             setUserName(userData.name);
             setTelephone(userData.telephone);
             setAddress(userData.address);
@@ -58,7 +60,8 @@ export default function NewFavList() {
             telephone: telephone,
             address: address,
             zipcode: zipcode,
-            city: city
+            city: city,
+            userimage: userImage
         };
 
         await addDoc(favsRef, newFavList);
@@ -77,7 +80,7 @@ export default function NewFavList() {
             reader.readAsDataURL(file);
             setErrorMessage(""); // reset errorMessage state
         } else {
-            // if not below 0.5MB display an error message using the errorMessage state
+            // if not below 1MB display an error message using the errorMessage state
             setErrorMessage("Filen er for stor");
         }
     }
