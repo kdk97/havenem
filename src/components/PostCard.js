@@ -8,12 +8,17 @@ export default function PostCard({ post }) {
     }
 
     return (
-        <article onClick={handleClick}>
-            <h2 className="pad">{post.uid}</h2>
-            <h2 className="pad">{post.category}</h2>
-            <h2 className="pad">{post.user}</h2>
-            <img className="image-preview" src={post.image} alt="preview"/>
-            <h2 className="pad">{post.name}</h2>
+        <article className="home-page" onClick={handleClick}>
+            <div className="home-page-card">
+                <div>
+                    <img className="image-preview" src={post.image} alt="preview"/>
+                </div>
+                <div>
+                    <h2 className="pad">{post.name}</h2>
+                    <h3 className="pad">Kategori: {post.category}</h3>
+                    <h3 className="pad">{post.user}</h3>
+                </div>
+            </div>
         </article>
     );
 }

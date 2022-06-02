@@ -2,6 +2,7 @@ import { doc, getDoc } from "@firebase/firestore";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { favsRef } from "../firebase-config";
+import useravatar from "../assets/img/user.png";
 
 export default function UpdatePage() {
     
@@ -22,17 +23,22 @@ export default function UpdatePage() {
 
     return (
         <section className="page">
-            <h1>Opslag</h1>           
-            <img className="image-preview" src={post.image} alt="forhåndsvisning"/>
-            <h2>{post.category}, {post.name}</h2>
-            <p>{post.about}</p>
-            <div className="usercard">
-            <img src={post.imagepreview} />
-            <h2>{post.user}</h2>
-            <h3><a href={post.telephone}>+45{post.telephone}</a></h3>
-            <h3>{post.address}</h3>
-            <h3>{post.zipcode}, {post.city}</h3>
-          </div>
+            <div className="post-page">          
+                <img className="image-preview" src={post.image} alt="forhåndsvisning"/>
+                <h2>{post.name}</h2>
+                <h3>Kategori: {post.category}</h3>
+                <p>Om</p>
+                <p>{post.about}</p>
+                <div className="usercard">
+                    <img alt="profil" src= {useravatar}></img>
+                    <div>
+                        <h3>{post.user}</h3>
+                        <h3><a href={post.telephone}>+45{post.telephone}</a></h3>
+                        <h3>{post.address}</h3>
+                        <h3>{post.zipcode}, {post.city}</h3>
+                    </div>
+                </div>
+            </div>
         </section>
     );
 }

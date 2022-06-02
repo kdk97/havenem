@@ -5,9 +5,10 @@ export default function SearchBar({ setValue }) {
     }
   
     return (
-      <article>
+      
+      <div className="searchbar">
         <input type="search" placeholder="Search" onChange={handleSearch} />
-      </article>
+      </div>
     );
   }
   

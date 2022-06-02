@@ -29,10 +29,12 @@ export default function HomePage() {
 
     return (
         <section className="top-bar">
-            <h1>Havenem</h1>
+            <h3>Hjem</h3>
             <SearchBar setValue={setSearchValue} />
             <section className="grid-container">
-                {posts.map(post => (<PostCard post={post} key={post.id}/>))}
+                <div className="home-page">
+                    {posts.map(post => (<PostCard post={post} key={post.id}/>))}
+                </div>
             </section>
 
         </section>

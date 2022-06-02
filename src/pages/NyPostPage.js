@@ -106,9 +106,7 @@ export default function NewFavList() {
                     required
                     />
             </label>
-            <section className="add-posts">
                 <label>
-                    Vælg Kategori
                     <select value={category} onChange={e => setCategory(e.target.value)} required>
                         <option>Kategori</option>
                         {
@@ -123,7 +121,6 @@ export default function NewFavList() {
                 <input type="text" placeholder="Om" onChange={e => setAbout(e.target.value)}
                 required
                 />
-            </section>
             <button type="submit">Opret annonce</button>
         </form>
     </section>

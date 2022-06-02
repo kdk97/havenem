@@ -37,7 +37,7 @@ form {
   text-align: center;
 }
 
-form input{
+form input, select{
   font-size: 1.1em;
   border-radius: 10px;
   margin-top: 0.7em;
@@ -45,10 +45,7 @@ form input{
   padding: 0.2em;
 }
 
-.page {
-  padding: 1em;
-  padding-bottom: 4em;
-}
+
 
 .ovelser {
   margin: 1em auto;
@@ -154,6 +151,9 @@ button a {
   margin: 1em auto 0;
 }
 
+.button-front{
+  font-size: 13px;
+}
 
 
 /* ---------- nav  ---------- */
@@ -312,7 +312,47 @@ nav p{
   font-size: 1.2em;
 }
 
-/* ---------- post-page ---------- */
+/* ---------- home-page ---------- */
+
+.home-page{
+  display: grid;
+  grid: 280px / auto auto;
+  grid-gap: 5px;
+}
+
+.home-page-card{
+  display: block;
+}
+
+.home-page img{
+  margin-bottom: 0;
+  width: 100%;
+  border-radius: 5px;
+  max-height: 160px;
+  min-width: 153.9px;
+}
+
+.home-page h1{
+  display: none;
+}
+
+.home-page h2{
+  margin: 0.3em auto;
+  font-size: 1.3em;
+}
+
+.home-page h3{
+  color: black;
+  margin: 0.3em auto;
+  text-align: start;
+  font-size: 0.8em;
+}
+
+.home-page p{
+  margin: 0.2em auto;
+}
+
+
 
 
 /* ---------- Bekseder ---------- */
@@ -323,7 +363,65 @@ nav p{
 }
 
 
+/* ---------- Searchbar ---------- */
+
+.searchbar{
+  margin: 2.5em auto 0.6em;
+  max-width: 350px;
+  width: 90%;
+}
+
+.searchbar input{
+  margin: auto;
+  min-height: 25px;
+  max-width: 350px;
+  width: 100%;
+  border: 2px solid grey;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+}
 
 
+/* ---------- Post-page ---------- */
 
+.post-page{
+  width: 90%;
+  margin:auto;
+  margin-top: 0;
+}
 
+.post-page .image-preview{
+  width: 100%;
+  min-height: 280px;
+}
+
+.post-page h1{
+
+}
+
+.post-page h2{
+  margin: 0.3em auto;
+  font-size: 2.5em;
+  width: 90%;
+}
+
+.post-page h3{
+  color: black;
+  margin: 0.3em auto;
+  text-align: start;
+  font-size: 0.8em;
+  width: 90%;
+}
+
+.post-page p{
+  margin: 0.2em auto;
+  width: 90%;
+}
+
+.usercard{
+  margin-top: 2em;
+  display: grid;
+  grid: 100px / auto auto;
+  grid-gap: 0;
+  width: 50%;
+}
