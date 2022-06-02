@@ -1,22 +1,23 @@
-import {addDoc} from "@firebase/firestore";
+import {addDoc, doc, getDoc} from "@firebase/firestore";
 import {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
-import {favsRef} from "../firebase-config";
+import {favsRef, usersRef} from "../firebase-config";
 import noimage from "../assets/img/no-image.png";
+import { getAuth } from "firebase/auth";
 
 
 export default function NewFavList() {
     const [image, setImage] = useState("");
     const [posts, setPosts] = useState([]);
-    const [selectedPosts, setSelectedPosts] = useState([]);
-    const [selectedPost, setSelectedPost] = useState({});
+    const [category, setCategory] = useState("");
     const [name, setName] = useState("");
     const [about, setAbout] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
+    const [userName , setUserName] = useState("");
 
 
     const navigate = useNavigate();
-
+    const auth = getAuth();
     useEffect(() => {
         async function getPosts() {
             const url = "https://api.jsonbin.io/b/62974317402a5b380218285b/1";
@@ -24,9 +25,16 @@ export default function NewFavList() {
             const data = await response.json();
             setPosts(data);
             console.log(data);
+            const authUser = auth.currentUser;
+            const docRef = doc(usersRef, authUser.uid);
+            const docSnap = await getDoc(docRef);
+            const userData = docSnap.data();
+            setUserName(userData.name);
+            console.log(userData);
+            
         }
         getPosts();
-    },);
+    },[]);
 
     async function handleSubmit(event) {
         event.preventDefault();
@@ -35,7 +43,8 @@ export default function NewFavList() {
             name: name,
             image: image,
             about: about,
-            posts: selectedPosts
+            category: category,
+            user: userName
         };
 
         await addDoc(favsRef, newFavList);
@@ -81,11 +90,11 @@ export default function NewFavList() {
             <section className="add-posts">
                 <label>
                     Vælg Kategori
-                    <select value={selectedPost} onChange={e => setSelectedPost(e.target.value)}>
+                    <select value={category} onChange={e => setCategory(e.target.value)}>
                         <option>Kategori</option>
                         {
                             posts.map(post => (
-                                <option value={post.id} key={post.id}>
+                                <option value={post.name} key={post.id}>
                                     {post.name}
                                 </option>
                             ))

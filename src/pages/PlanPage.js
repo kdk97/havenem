@@ -33,6 +33,7 @@ export default function UpdatePage() {
             <h1>Annoncer</h1>           
             <img className="image-preview" src={post.image} alt="preview"/>
             <p>{post.selected}</p>
+            <h2 className="pad">{post.category}</h2>
             <h1>{post.name}</h1>
             <p>{post.about}</p>
         </section>
