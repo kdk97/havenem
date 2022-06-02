@@ -14,6 +14,10 @@ export default function NewFavList() {
     const [about, setAbout] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
     const [userName , setUserName] = useState("");
+    const [telephone , setTelephone] = useState("");
+    const [address , setAddress] = useState("");
+    const [email , setEmail] = useState("");
+    const [city , setCity] = useState("");
 
 
     const navigate = useNavigate();
@@ -30,6 +34,10 @@ export default function NewFavList() {
             const docSnap = await getDoc(docRef);
             const userData = docSnap.data();
             setUserName(userData.name);
+            setTelephone(userData.telephone);
+            setAddress(userData.address);
+            setEmail(userData.email);
+            setCity(userData.city);
             console.log(userData);
             
         }
@@ -44,7 +52,11 @@ export default function NewFavList() {
             image: image,
             about: about,
             category: category,
-            user: userName
+            user: userName,
+            telephone: telephone,
+            address: address,
+            email: email,
+            city: city
         };
 
         await addDoc(favsRef, newFavList);

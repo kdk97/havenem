@@ -10,8 +10,8 @@ import imgPlaceholder from "../assets/img/user-placeholder.jpg"
 export default function SignUpPage() {
   const [errorMessage, setErrorMessage] = useState("");
   const [name, setName] = useState("");
-  const [age, setAge] = useState("");
   const [city, setCity] = useState("");
+  const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
   const [telephone, setTelephone] = useState("");
   const [image, setImage] = useState("");
@@ -19,7 +19,7 @@ export default function SignUpPage() {
 
   function handleSignUp(event) {
     event.preventDefault();
-    const mail = event.target.mail.value; 
+    const mail = event.target.email.value; 
     const password = event.target.password.value; 
 
     createUserWithEmailAndPassword(auth, mail, password)
@@ -41,9 +41,11 @@ export default function SignUpPage() {
   async function saveUserInfo() {
     const userToUpdate = {
       name: name, 
-      age: age, 
       city: city, 
       address: address, 
+      email: email,
+      telephone: telephone,
+
     };
     console.log(userToUpdate);
     const docRef = doc(usersRef, auth.currentUser.uid);
@@ -90,16 +92,15 @@ export default function SignUpPage() {
             placeholder="Telefon nummer"
           />
         </label>
-        <input type="email" name="mail" placeholder="Email" />
         <label>
           <input
             type="text"
-            value={age}
-            onChange={(e) => setAge(e.target.value)}
-            name="age"
-            placeholder="Alder"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            name="email"
+            placeholder="E-mail"
           />
-        </label>{" "}
+        </label>
         <label>
           <input
             type="text"
@@ -108,7 +109,7 @@ export default function SignUpPage() {
             name="city"
             placeholder="By"
           />
-        </label>{" "}
+        </label>
         <label>
           <input
             type="text"
