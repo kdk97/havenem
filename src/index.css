@@ -17,6 +17,7 @@ h1 {
     text-align: center;
     color: white;
     text-decoration: none;
+    margin-top: 4%;
 }
 
 h1 a{ 
@@ -29,11 +30,10 @@ h1 a{
     background-color: #0C3B29;
     z-index: -1;
     border-radius: 0 0 10% 10%;
-    height: 30vh;
+    height: 27.5vh;
 }
 
 form {
-  padding-top: 20px;
   text-align: center;
 }
 
@@ -114,6 +114,7 @@ form h3{
   max-width: 70%;
   display: flex;
   margin: auto;
+  margin-bottom: 2%;
 }
 
 /*---------image preview --------*/
@@ -153,7 +154,11 @@ button a {
 }
 
 .button-logud{
-  margin: 1em auto 0;
+  margin-top: 5%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .button-front{
@@ -180,8 +185,8 @@ nav a {
   
   color: white;
   text-align: center;
-  padding-top: 10px;
-  padding-bottom: 16px;
+  padding-top: 8px;
+  padding-bottom: 10px;
   padding-left: 5.5%;
   padding-right: 5.5%;
   text-decoration: none;
@@ -350,6 +355,13 @@ nav p{
   width: 90%
 }
 
+.opret-post button {
+  padding-top: 3%;
+  padding-bottom: 3%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
 /* ---------- front-page ---------- */
 
 .front-page p{
@@ -397,8 +409,31 @@ nav p{
   margin: 0.2em auto;
 }
 
+/* ---------- Profilside ---------- */
 
+.profilePage {
+  padding-top: 0%;
+}
 
+.profilePage img {
+  margin-top: 0%;
+}
+
+.profilePage .file-input {
+  margin-top: 10%;
+}
+
+.profilePage input {
+  margin-top: 5%;
+}
+
+.profilePage button {
+  margin-top: 5%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  padding-left: 12.25%;
+  padding-right: 12.25%;
+}
 
 /* ---------- Bekseder ---------- */
 
@@ -417,7 +452,7 @@ nav p{
   border: 2px solid grey;
   border-radius: 8px;
   background-color: #f5f5f5;
-  margin-top: 12.5%;
+  margin-top: 10%;
 }
 
 
