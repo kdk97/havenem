@@ -31,7 +31,7 @@ export default function UpdatePage() {
                 <p>{post.about}</p>
                 <div className="usercard">
                     <img alt="profil" src= {useravatar}></img>
-                    <div>
+                    <div className="usercard-text">
                         <h3>{post.user}</h3>
                         <h3><a href={post.telephone}>+45{post.telephone}</a></h3>
                         <h3>{post.address}</h3>

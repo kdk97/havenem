@@ -504,9 +504,26 @@ nav p{
 }
 
 .usercard{
-  margin-top: 2em;
+  position: fixed;
+  right: 4.5%;
+  bottom: 12%;
   display: grid;
   grid: 100px / auto auto;
   grid-gap: 0;
   width: 50%;
+  border: 2px solid #0C3B29;
+  padding-right: 145px;
+  padding-left: 12px;
+  padding-top: 12px;
+  padding-bottom: 5px;
+}
+
+.usercard img {
+  width: 92px;
+}
+
+.usercard h3 {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 15%;
 }
