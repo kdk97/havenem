@@ -40,7 +40,7 @@ form {
 form input, select{
   font-size: 1.1em;
   border-radius: 10px;
-  margin-top: 0.7em;
+  margin-top: 7.5%;
   border: 1px solid;
   padding: 0.2em;
 }
@@ -81,8 +81,6 @@ form h3{
 
 /*--------grid-container--------*/
 
-
-
 .grid-container {
     margin: auto;
     display: grid;
@@ -112,7 +110,14 @@ form h3{
   border-radius: 100%;
 }
 
+.logo2 {
+  max-width: 70%;
+  display: flex;
+  margin: auto;
+}
+
 /*---------image preview --------*/
+
 .image-preview {
   width: 80%;
   max-width: 350px;
@@ -157,6 +162,7 @@ button a {
 
 
 /* ---------- nav  ---------- */
+
 nav {
   width: auto;
   background-color: #0C3B29;
@@ -166,16 +172,20 @@ nav {
   right: 0;
   text-align: center;
   z-index: 10;
+  display: flex;
+  justify-content: center;
 }
 
-
 nav a {
-  display: inline-block;
+  
   color: white;
   text-align: center;
-  padding: 10px 7px 7px 16px;
+  padding-top: 10px;
+  padding-bottom: 16px;
+  padding-left: 5.5%;
+  padding-right: 5.5%;
   text-decoration: none;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.2em;
   font-size: 0.7rem;
 }
 
@@ -190,12 +200,14 @@ nav p{
 }
 
 /* Add a color to the active/current link */
+
 .nav a.active {
   background-color: var(--dark);
   color: var(--light);
 }
 
 /* ---------- loader styling ---------- */
+
 .loader {
   position: fixed;
   left: 0px;
@@ -233,7 +245,18 @@ nav p{
   transition: visibility 0s 0.4s, opacity 0.4s linear;
 }
 
+/* ---------- Searchbar ---------- */
+
+.searchbar {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 350px;
+  width: 90%;
+}
+
 /* ---------- Swiper ---------- */
+
 .swiper {
   max-width: 350px;
   width: 90%;
@@ -273,7 +296,7 @@ nav p{
   padding: 1em 1em 1em;
   z-index: -1;
   border-radius: 0 0 50% 50%;
-  height: 1vh;
+  height: 7vh;
   display: block;
 }
 
@@ -303,6 +326,28 @@ nav p{
   border: 0px solid;
   padding: 0;
   color: black;
+}
+
+.opret-post {
+  display: flex;
+  flex-direction: column;
+}
+
+.opret-post select {
+    width: 92.5%;
+}
+
+.opret-post-prop {
+  width: 100%;
+}
+
+.opret-post-input {
+  width: 90%;
+}
+
+.opret-post-om {
+  padding-bottom: 33%;
+  width: 90%
 }
 
 /* ---------- front-page ---------- */
@@ -365,20 +410,14 @@ nav p{
 
 /* ---------- Searchbar ---------- */
 
-.searchbar{
-  margin: 2.5em auto 0.6em;
-  max-width: 350px;
-  width: 90%;
-}
-
-.searchbar input{
-  margin: auto;
+.searchbar input {
   min-height: 25px;
   max-width: 350px;
   width: 100%;
   border: 2px solid grey;
   border-radius: 8px;
   background-color: #f5f5f5;
+  margin-top: 12.5%;
 }
 
 
@@ -393,10 +432,6 @@ nav p{
 .post-page .image-preview{
   width: 100%;
   min-height: 280px;
-}
-
-.post-page h1{
-
 }
 
 .post-page h2{
