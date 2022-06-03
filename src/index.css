@@ -373,7 +373,8 @@ nav p{
 
 .home-page{
   display: grid;
-  grid: 235px / auto auto;
+  grid: 240px / 172px 172px;
+  grid-gap: 12px;
 }
 
 .home-page-card{
