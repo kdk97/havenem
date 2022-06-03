@@ -3,6 +3,7 @@ import {onSnapshot} from "firebase/firestore";
 import {favsRef} from "../firebase-config";
 import PostCard from "../components/PostCard";
 import SearchBar from "../components/SearchBar";
+import logo2 from "../assets/img/skovl-logo2.png";
 
 export default function HomePage() {
     const [posts, setPosts] = useState([]);
@@ -29,8 +30,10 @@ export default function HomePage() {
 
     return (
         <section className="top-bar">
-            <h3>Hjem</h3>
+            <img src={logo2} alt="havenem-logo2" className="logo2"/>
+            <div className="searchbar">
             <SearchBar setValue={setSearchValue} />
+            </div>
             <section className="grid-container">
                 <div className="home-page">
                     {posts.map(post => (<PostCard post={post} key={post.id}/>))}

@@ -4,6 +4,7 @@ import {useNavigate} from "react-router-dom";
 import {favsRef, usersRef} from "../firebase-config";
 import noimage from "../assets/img/no-image.png";
 import { getAuth } from "firebase/auth";
+import logo2 from "../assets/img/skovl-logo2.png";
 
 
 export default function NewFavList() {
@@ -83,8 +84,8 @@ export default function NewFavList() {
     }
 
     return (<section className="page">
-        <h1>Opret annonce</h1>
-        <form onSubmit={handleSubmit}>
+        <img src={logo2} className="logo2" alt="havenem-logo2"/>
+        <form className="opret-post" onSubmit={handleSubmit}>
         <label>
                 <img
                     className="image-preview"
@@ -98,16 +99,11 @@ export default function NewFavList() {
                     onChange={handleImageChange}
                     />
             </label>
-            <label>
-                <input
-                    type="text"
-                    placeholder="Navngiv produkt"
-                    onChange={e => setName(e.target.value)}
-                    required
-                    />
-            </label>
-                <label>
-                    <select value={category} onChange={e => setCategory(e.target.value)} required>
+                <label className="opret-post-prop">
+                    <select 
+                    value={category} 
+                    onChange={e => setCategory(e.target.value)}
+                    required>
                         <option>Kategori</option>
                         {
                             posts.map(post => (
@@ -116,11 +112,25 @@ export default function NewFavList() {
                                 </option>
                             ))
                         }
-                    </select>
+                    </select> 
                 </label>
-                <input type="text" placeholder="Om" onChange={e => setAbout(e.target.value)}
+                <label className="opret-post-prop">
+                <input
+                    type="text"
+                    placeholder="Overskrift/produkt"
+                    onChange={e => setName(e.target.value)}
+                    className="opret-post-input"
+                    required
+                    />
+            </label>
+            <label className="opret-post-prop">
+                <input type="text" 
+                placeholder="Om" 
+                onChange={e => setAbout(e.target.value)}
+                className="opret-post-om"
                 required
                 />
+            </label>
             <button type="submit">Opret annonce</button>
         </form>
     </section>
