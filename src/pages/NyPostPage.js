@@ -111,7 +111,7 @@ export default function NewFavList() {
                         <option>Kategori</option>
                         {
                             posts.map(post => (
-                                <option value={post.name} key={post.id}>
+                                <option value={post.name}>
                                     {post.name}
                                 </option>
                             ))
