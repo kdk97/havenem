@@ -504,9 +504,7 @@ nav p{
 }
 
 .usercard{
-  position: fixed;
-  right: 4.5%;
-  bottom: 12%;
+  margin-top: 10%;
   display: grid;
   grid: 100px / auto auto;
   grid-gap: 0;
