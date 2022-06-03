@@ -178,7 +178,7 @@ nav {
   text-align: center;
   z-index: 10;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 nav a {
@@ -504,9 +504,9 @@ nav p{
 }
 
 .usercard{
-  margin-top: 10%;
+  margin-top: 8%;
   display: grid;
-  grid: 100px / auto auto;
+  grid: 100px / auto auto ;
   grid-gap: 0;
   width: 50%;
   border: 2px solid #0C3B29;
@@ -520,8 +520,17 @@ nav p{
   width: 92px;
 }
 
+.usercard-text {
+  width: 200px;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 .usercard h3 {
-  margin-top: 5%;
-  margin-bottom: 5%;
-  margin-left: 15%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-left: 5%;
 }
