@@ -15,8 +15,7 @@ export default function PostCard({ post }) {
                 </div>
                 <div>
                     <h2 className="pad">{post.name}</h2>
-                    <h3 className="pad">Kategori: {post.category}</h3>
-                    <h3 className="pad">{post.user}</h3>
+                    <h3 className="pad">{post.category}</h3>
                 </div>
             </div>
         </article>

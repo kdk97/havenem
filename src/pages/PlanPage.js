@@ -23,11 +23,11 @@ export default function UpdatePage() {
 
     return (
         <section className="page">
-            <div className="post-page">          
+            <div className="post-page">     
+            <h1>Annonce</h1>     
                 <img className="image-preview" src={post.image} alt="forhåndsvisning"/>
                 <h2>{post.name}</h2>
                 <h3>Kategori: {post.category}</h3>
-                <p>Om</p>
                 <p>{post.about}</p>
                 <div className="usercard">
                     <img alt="profil" src= {useravatar}></img>
