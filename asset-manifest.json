@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/my-app/static/css/main.16b5f038.css",
+    "main.js": "/my-app/static/js/main.564c8804.js",
+    "static/js/787.26394d88.chunk.js": "/my-app/static/js/787.26394d88.chunk.js",
+    "static/media/skovl-logo.png": "/my-app/static/media/skovl-logo.6ae0cd46034f22fb7528.png",
+    "static/media/skovl-logo2.png": "/my-app/static/media/skovl-logo2.ce6dec97ec069d9618c8.png",
+    "static/media/fake2.png": "/my-app/static/media/fake2.ad276e7ba448c162978e.png",
+    "static/media/fake3.png": "/my-app/static/media/fake3.e60f3d711d2ad57e7c72.png",
+    "static/media/fake1.png": "/my-app/static/media/fake1.f8d367f61d8670781758.png",
+    "static/media/no-image.png": "/my-app/static/media/no-image.fd3a136a75a0313f69b4.png",
+    "static/media/undraw1.svg": "/my-app/static/media/undraw1.9386b365086abc03df881b27a5f21c49.svg",
+    "static/media/undraw3.svg": "/my-app/static/media/undraw3.d28b0b43647d143c9d5e6fe599b77206.svg",
+    "static/media/undraw2.svg": "/my-app/static/media/undraw2.8c75ae066e7fecfbe1044de0663bba36.svg",
+    "static/media/account.svg": "/my-app/static/media/account.e1e2ff3c3c8afa9886a5e540c6360c29.svg",
+    "index.html": "/my-app/index.html",
+    "static/media/add.svg": "/my-app/static/media/add.17691f6c4d2957135baad101fc81b74a.svg",
+    "static/media/chat.svg": "/my-app/static/media/chat.92968e3c12d4faff1b40831effb73658.svg",
+    "static/media/home.svg": "/my-app/static/media/home.1d1e3d9bdfeb1991434ab9f29a9fb11c.svg",
+    "main.16b5f038.css.map": "/my-app/static/css/main.16b5f038.css.map",
+    "main.564c8804.js.map": "/my-app/static/js/main.564c8804.js.map",
+    "787.26394d88.chunk.js.map": "/my-app/static/js/787.26394d88.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.16b5f038.css",
+    "static/js/main.564c8804.js"
+  ]
+}
