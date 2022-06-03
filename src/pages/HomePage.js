@@ -34,7 +34,7 @@ export default function HomePage() {
             <div className="searchbar">
             <SearchBar setValue={setSearchValue} />
             </div>
-            <section className="grid-container">
+            <section className="grid-container-homepage">
                 <div className="home-page">
                     {posts.map(post => (<PostCard post={post} key={post.id}/>))}
                 </div>
